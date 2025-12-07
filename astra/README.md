@@ -65,12 +65,8 @@ Looking ahead, this solution has the potential to serve broader applications bey
 
 None! this script is written in pure vanilla Python 3+.
 
-# Usage
-
-    python stream.py
-
 # Honorable mentions
- * João Dias [Tasker Android APP](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and his [homepage](https://tasker.joaoapps.com)
+ * To my father and my son: without them, this project would not exist
  * Anton Hvornum Aka Torxed https://github.com/Torxed/chromecast
  * [Perth Linux User Group](http://plug.org.au/)'s [talk from 2016](https://docs.google.com/presentation/d/1X1BdFunVnLkF7L0BgevH2zzkcSe0_gtdTJ_pMdEuakQ/htmlpresent)
  * [pychromecast](https://github.com/home-assistant-libs/pychromecast) Which had a lot of `URN`'s that could be re-used

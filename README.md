@@ -12,6 +12,16 @@ Currently, I have integrated a two core services called Cosmo and Astra, which c
     1. Budget android smartphone (£100 Moto G35, can be any) that runs Tasker and ChatGPT via API (check folder 'cosmo').
     2. Chromecast and Raspberry Pi - connected to an old 40" TV or £30 Projector -> for streaming content (check folder 'astra').
 
+# Honorable mentions
+ * To my father and my son: without them, this project would not exist
+ * ApenAI and [ChatGPT](https://chatgpt.com)
+ * João Dias [Tasker Android APP](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and his [homepage](https://tasker.joaoapps.com)
+ * Anton Hvornum Aka Torxed https://github.com/Torxed/chromecast
+ * [Perth Linux User Group](http://plug.org.au/)'s [talk from 2016](https://docs.google.com/presentation/d/1X1BdFunVnLkF7L0BgevH2zzkcSe0_gtdTJ_pMdEuakQ/htmlpresent)
+ * [pychromecast](https://github.com/home-assistant-libs/pychromecast) Which had a lot of `URN`'s that could be re-used
+ * [casttube](https://github.com/ur1katz/casttube) Which had all the YouTube Web-API's to manage a YouTube lounge
+ * Google for inventing [Chromecast](https://en.wikipedia.org/wiki/Chromecast) in 2013 and making the [ProtoBuf](https://developers.google.com/protocol-buffers/docs/encoding) protocol very open and easy to deconstruct; Google Drive and [Android](https://www.android.com) 
+
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
 
 

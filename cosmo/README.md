@@ -39,6 +39,11 @@ Known issues:
 
 ![Logo](https://cosmo.yes.app/cosmo2/c16.jpg)
 
+# Honorable mentions
+ * João Dias [Tasker Android APP](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm) and his [homepage](https://tasker.joaoapps.com)
+ * ApenAI and [ChatGPT](https://chatgpt.com)
+ * Google for Google Drive and [Android](https://www.android.com)
+ * To my father and my son: without them, this project would not exist
 
 ### Support the project by purchasing my book [COSMO](https://cosmo.yes.app). All proceeds will be donated to charity and individuals in need, like my dad. [COSMO](https://cosmo.yes.app) an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've read before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
 
