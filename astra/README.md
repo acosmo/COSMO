@@ -24,7 +24,7 @@ Later, after my father passed away, my son asked if I could set it up in his roo
 
     Now, it runs automatically on schedule, and my son drifts off to sleep peacefully ❤
 
-### Support the project by purchasing my book [COSMO](https://cosmo.yes.app) All proceeds will be donated to charity and individuals in need, like my dad. [COSMO](https://cosmo.yes.app) an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've read before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
+### Support the project by purchasing my book [COSMO](https://cosmo.yes.app) All proceeds will be donated to charity and individuals in need, like my dad. It is an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've listened before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
 
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
 
