@@ -12,12 +12,13 @@ And so, my old iPhone XS became the perfect candidate for COSMO’s new face.
 
 ![Logo](https://cosmo.yes.app/face/face.jpg)
 
-# Usage: open in your PC or old phone / tablet (in full screen 'F11')
+# Usage: open in your PC (in full screen 'F11') or old phone (turn phone horizontally) or on tablet
 [https://cosmo.yes.app/face/](https://cosmo.yes.app/face/)
 
-# Send Smile Command
+# Send 'smile' command
     curl -X POST https://rest.ably.io/channels/cosmo_face/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL","data": "smile" }'
 
+# Send 'blink' command
     curl -X POST https://rest.ably.io/channels/cosmo_face/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL","data": "blink" }'
 
 # Emotions
