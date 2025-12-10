@@ -1,4 +1,4 @@
-# COSMO
+# COSMO ❤
 COSMO Project Overview
 
 The COSMO project began after my son asked me to build a **robot** for his granddad, who is disabled. In the UK alone, there are over 3 million people with similar conditions, yet the market lacks accessible and effective products to meet their needs. Seeing this gap, we started an open-source project to develop a small, user-friendly robot designed specifically to help my dad. Later, Astra appeared, and few month ago I wrote a book about COSMO, and the Astra book is still in progress.

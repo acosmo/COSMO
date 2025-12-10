@@ -212,3 +212,30 @@ const eyes = new EyeController({
   lowerLeftEyelid: document.querySelector('.left .eyelid.lower'),
   lowerRightEyelid: document.querySelector('.right .eyelid.lower'),
 });
+
+function updateMouthPosition() {
+  const leftEye = document.querySelector('.eye.left');
+  const rightEye = document.querySelector('.eye.right');
+  const mouth = document.querySelector('.mouth');
+
+  if (!leftEye || !rightEye || !mouth) return;
+
+  const leftRect = leftEye.getBoundingClientRect();
+  const rightRect = rightEye.getBoundingClientRect();
+
+  // calculate horizontal center between eyes
+  const centerX = (leftRect.left + leftRect.right + rightRect.left + rightRect.right) / 4;
+
+  // apply center
+  mouth.style.left = `${centerX}px`;
+}
+
+// update mouth initially
+updateMouthPosition();
+
+// if eyes move dynamically, call inside animation frame
+function animate() {
+  updateMouthPosition();
+  requestAnimationFrame(animate);
+}
+animate();

@@ -5,6 +5,7 @@
   --eye-size: 33.33vmin;
   --eye-color: rgb(255, 255, 255);
   --eyelid-color: rgb(0, 0, 0);
+  --mouth-color: rgb(255, 255, 255);
 }
 
 body {
@@ -35,7 +36,7 @@ body {
   border-radius: 100%;
   height: var(--eye-size);
   width: var(--eye-size);
-  bottom: calc(var(--eye-size) / 1);
+  bottom: calc(var(--eye-size) / 0.65);
   z-index: 1;
   transform: rotateX(0);
 }
@@ -65,4 +66,14 @@ body {
   border-radius: 100%;
   bottom: calc(var(--eye-size) * -1);
   left: calc(var(--eye-size) * -0.375);
+}
+
+.mouth {
+  position: absolute;
+  bottom: 15%; /* distance from bottom, adjust */
+  width: 35vmin;
+  height: 40vmin;
+  border-bottom: 10vmin solid var(--mouth-color); /* mounth thickness */
+  border-radius: 0 0 0% 0%; /* can be set to: 0 0 20% 20%, to add curves on mouth*/
+  transform: translateX(-50%); /* will center based on resize*/
 }

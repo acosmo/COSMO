@@ -1,4 +1,4 @@
-# ASTRA
+# ASTRA ❤
 ASTRA Project Overview 😉❤❤❤ 
 
 ![Logo](https://cosmo.yes.app/astra/astra.jpg)
