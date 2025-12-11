@@ -1,3 +1,28 @@
+ #helloCosmo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1920px; /* full screen */
+    height: 1080px;
+    font-size: 200px;
+    font-weight: bold;
+    background: #ffffff; /* green color, you can change */
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    z-index: 9999; /* above all content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, opacity 0.3s;
+  }
+
+  #helloCosmo:active {
+    transform: translate(-50%, -50%) scale(0.95); /* pressed effect */
+  }
+
 :root {
   --face-color: rgb(0, 0, 0);
   --face-height: 100vh;

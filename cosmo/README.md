@@ -24,7 +24,7 @@ To make it running:
 If you don’t have a subscription, you can use the [7-day trial version](https://tasker.joaoapps.com/download.html)
  to set it up quickly. COSMO will continue working after the trial ends. I still encourage you to support João Dias by purchasing the app (£3.99), as he created an excellent tool.
 2. Generate [ChatGPT API Keys](https://platform.openai.com/settings/organization/api-keys)
-3. Replace all XXXXXX placeholders in tasker_import.txt with your variables, then either import the file or manually set the steps following my screenshot (folder: config_screenshots)
+3. Replace all XXXXXX placeholders in [COSMO Task](face/tasker/COSMO_task.prf.txt) with your variables, then either import the file or manually set the steps following my screenshot (folder: [config_screenshots](config_screenshots))
 3. COSMO (ChatGPT) is inside. Shake the phone — it should work. If not, check the config_screenshots:
 
 ![Logo](https://cosmo.yes.app/cosmo2/a4.jpg)
