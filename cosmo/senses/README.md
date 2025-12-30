@@ -21,7 +21,7 @@ Install PlatformIO in VS Code:
 3. In the search box, type PlatformIO IDE.
 4. Look for the official PlatformIO IDE by PlatformIO.
 5. Click Install.
-6. Modify config.h setting your WIFI and COSMO IP
+6. Modify config.h.template setting your WIFI and COSMO IP and move it to template config.h
 7. Build and Upload and Monitor
 
 Below is an example how to [Build and Upload and Monitor in PlatformIO](https://www.youtube.com/watch?v=l3WudC4WBDo)
