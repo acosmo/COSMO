@@ -39,7 +39,7 @@ Request ID
 			</Bundle>
 			<Int sr="arg1" val="1888"/>
 			<Str sr="arg2" ve="3">GET</Str>
-			<Str sr="arg3" ve="3">/ask</Str>
+			<Str sr="arg3" ve="3">/ask4</Str>
 			<Str sr="arg4" ve="3"/>
 			<Int sr="arg5" val="1"/>
 			<Int sr="arg6" val="1"/>

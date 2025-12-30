@@ -81,6 +81,11 @@ Looking ahead, this solution has the potential to serve broader applications bey
     Running pigpiod daemon
     PiIR IR Library
 
+Known issues: 
+1. On a Raspberry Pi, these files must be marked as executable; otherwise, cron will not be able to run them
+chmod +x /home/pi/COSMO/astra/laser_eye.py
+chmod +x /home/pi/COSMO/astra/stream.py
+
 # Honorable mentions
  * To my father and my son: without them, this project would not exist
  * Anton Hvornum Aka Torxed https://github.com/Torxed/chromecast

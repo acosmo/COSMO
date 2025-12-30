@@ -42,7 +42,7 @@ This is how it looks on a single Android device: Google Assistant opens a large 
     Pressing on COSMO face should activate "ChatGPT" in phone tasker
 
 # Known Issues:
- When COSMO Face is running from over HTTPS. Tapping on the face tries to send a request to http://192.168.1.109:1888/ask, which is HTTP. Firefox, Safari browsers block this as “mixed active content”, resulting in the error:
+ When COSMO Face is running from over HTTPS. Tapping on the face tries to send a request to http://192.168.1.109:1888/ask4, which is HTTP. Firefox, Safari browsers block this as “mixed active content”, resulting in the error:
 Workaround: Use "face" on Chrome (PC) or Android and allow permission 
 
 ![permission](../config_screenshots/pc_chrome_mixed_active_content.JPG)
