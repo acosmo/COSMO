@@ -22,7 +22,7 @@ How to:
 1. The cosmo_end_talk.xls file needs to be in your Google Drive folder, and you can update with your own short personality prefixes that will be added at 'end talk'. It need to be shared with link as on picture below.
 2. The cosmo.csv file needs to be in your GoogleDrive folder so it can store and be updated with logs of questions, answers, and timestamps.
 ![Logo](config_screenshots/c16.jpg)
-3. If you need more detailed steps, go through the images in the [config_screenshots](senses/listen/config_screenshots) folder one by one.
+3. If you need more detailed steps, go through the images in the [config_screenshots](config_screenshots) folder one by one.
 
 
 ![Logo](config_screenshots/a4.jpg)

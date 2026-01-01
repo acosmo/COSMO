@@ -85,8 +85,8 @@ Looking ahead, this solution has the potential to serve broader applications bey
 
 Known issues: 
 1. On a Raspberry Pi, these files must be marked as executable; otherwise, cron will not be able to run them
-chmod +x /home/pi/COSMO/astra/laser_eye.py
-chmod +x /home/pi/COSMO/astra/stream.py
+    - chmod +x /home/pi/COSMO/astra/laser_eye.py
+    - chmod +x /home/pi/COSMO/astra/stream.py
 
 # Honorable mentions
  * Thanks to God that gives...
