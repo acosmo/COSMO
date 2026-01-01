@@ -1,0 +1,123 @@
+<!--
+use below to re-upload UI only (PlatformIO shell command):
+'pio run --target uploadfs'
+-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000000ff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 360px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #ffffffff;
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #ffffffff;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100px;
+  height: 55px;
+  font-size: 16px;
+  margin: 6px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffffff;
+  color: rgb(0, 0, 0);
+}
+
+.btn:active {
+  background: #6c6c6cff;
+}
+
+.stop {
+  background: #56d94f;
+}
+
+.stop:active {
+  background: #52b527;
+}
+
+.speed-box {
+  margin-top: 20px;
+  background: #ffffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+input[type=range] {
+  width: 100%;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h2>LUNA &hearts;</h2>
+  <h4>(new friend of COSMO and ASTRA &#128522;)</h4>
+
+  <br>
+  <!-- Forward -->
+  <button class="btn"
+    onmousedown="cmd('F')" onmouseup="cmd('S')"
+    ontouchstart="cmd('F')" ontouchend="cmd('S')">
+    forward
+  </button><br>
+
+  <!-- Left | Stop | Right -->
+  <button class="btn"
+    onmousedown="cmd('L')" onmouseup="cmd('S')"
+    ontouchstart="cmd('L')" ontouchend="cmd('S')">
+    left
+  </button>
+
+  <button class="btn stop" onclick="cmd('S')">
+    stop
+  </button>
+
+  <button class="btn"
+    onmousedown="cmd('R')" onmouseup="cmd('S')"
+    ontouchstart="cmd('R')" ontouchend="cmd('S')">
+    right
+  </button><br>
+
+  <!-- Backward -->
+  <button class="btn"
+    onmousedown="cmd('B')" onmouseup="cmd('S')"
+    ontouchstart="cmd('B')" ontouchend="cmd('S')">
+    backward
+  </button>
+
+  <div class="speed-box">
+    <p>superpower</p>
+    <input type="range" min="120" max="200" value="120"
+           onchange="setSpeed(this.value)">
+  </div>
+</div>
+
+<script>
+function cmd(c){
+  fetch('/move?dir=' + c);
+}
+function setSpeed(v){
+  fetch('/speed?val=' + v);
+}
+</script>
+</body>
+<img src="luna.jpg" alt="Luna" style="width:100%;">
+</html>

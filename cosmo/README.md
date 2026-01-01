@@ -16,8 +16,10 @@ Importantly, this solution does not need high-bandwidth Internet content, as it 
 Every conversation is saved, so I have full visibility into what my son asks and how COSMO responds. This helps me tune COSMO better over time. All interactions are stored in my Google Drive in cosmo.csv.
 
 # Usage
-
     shake phone and magic happends... 😉❤❤❤ 
+
+# Usage 2 (replace IP of your phone)
+    curl -X GET http://192.168.1.109:1888/ask4
 
 To make it running: 
 1. Get [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_GB)

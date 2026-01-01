@@ -3,7 +3,12 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-#define TOUCH_THRESHOLD 30000
+// for different cable/charger/power supply you need to cilibrate and find your TOUCH_THRESHOLD
+// short  cables > 50-70K
+// medium cables > 70-90K
+// long   cables > 90-100K
+#define TOUCH_THRESHOLD 100000 // 100K USB PC | 90K Socket Cable
+
 #define DEBOUNCE_MS 5000   // 5 seconds
 
 // Last time we sent for each pin
