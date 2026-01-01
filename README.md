@@ -1,7 +1,7 @@
 # COSMO ❤
 COSMO Project Overview
 
-The COSMO project began after my son asked me to build a **robot** for his granddad, who is disabled. In the UK alone, there are over 3 million people with similar conditions, yet the market lacks accessible and effective products to meet their needs. Seeing this gap, we started an open-source project to develop a small, user-friendly robot designed specifically to help my dad. Later, Astra appeared, and few month ago I wrote a book about COSMO, and the Astra and Luna books is still in progress.
+The COSMO project began after my son asked me to build a **robot** for his granddad, who is disabled. In the UK alone, there are over 3 million people with similar conditions, yet the market lacks accessible and effective products to meet their needs. Seeing this gap, we started an open-source project to develop a small, user-friendly robot designed specifically to help my dad. Later, Astra appeared, than Luna and few month ago I wrote a book about COSMO, and the Astra and Luna books are both in progress.
 
 ![Logo](cosmo.jpg)
 
@@ -14,8 +14,9 @@ Start in the order described below this will gradually introduce you and your ki
 1. COSMO face: rus on PC or old iPad or phone. No hardware or purchases required! Introduce your child to basic programming, including API calls, HTML, CSS, and JavaScript. It’s fun and interactive — COSMO’s face can smile, play tricks on your dog, or even make it think there’s a cat in the house!
 2. COSMO voice: Learn how to use public APIs and interact with ChatGPT through code. Also it teach your child to basic phone automation and turns your phone into a powerful tool. Requires budget Android smartphone (£100 Moto G35, can be any Android) that runs Tasker and ChatGPT via API (check folder 'cosmo\senses\listen'). It requires registration with OpenAI, the company behind ChatGPT, and a one-time payment of $5–$10 to obtain your personal ChatGPT API key, which will be used with COSMO. Also requires the Tasker app (available free for 7 days — contact me via [Discord Channel](https://discord.gg/dVgZ73tp6) if you need the link). 
 3. COSMO touch: A basic introduction to microcontrollers and how to program them in C++. It requires a Heltec V3 or ESP32-S3 (both around £10) and a few wires — no soldering needed. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you’re unsure which to buy (check folder 'cosmo\senses\touch'). 
-4. ASTRA show: Discover fun bedtime automations with your child — like evening stories—that save you time and let you educational meaningful content and when it’s streamed. A basic introduction to Linux, Raspberry Pi, Python, and IR sensors. Requires: Raspberry Pi and Chromecast - connected to an old TV or £30 Projector via HDMI -> for streaming content (check folder 'astra').
+4. ASTRA show: Discover fun bedtime automations with your child — like evening stories. It helps you save time while letting you select valuable educational content and schedule when it’s streamed to your kid. A basic introduction to Linux, Raspberry Pi, Python, and IR sensors. Requires: Raspberry Pi and Chromecast - connected to an old TV or £30 Projector via HDMI -> for streaming content (check folder 'astra').
 5. LUNA car. It teaches C++, HTML, JavaScript, CSS, microcontrollers, motor control, soldering, and how to assemble the entire project. This is our most complex project, requiring a bit of soldering and construction skills for both you and your child. It uses an ESP8266, [4WD Kit with 4 motors and wheels for £11](https://www.aliexpress.com/item/1005009381370680.html), [L298N for £2](https://www.aliexpress.com/item/1005009009861868.html) motor driver, two Li-ion 18650 batteries and plenty of wires. Watch the detailed assembly video on [YouTube for guidance](https://www.youtube.com/watch?v=dcSIBYogxzA). Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you’re unsure which to buy.
+
 
 COSMO
 

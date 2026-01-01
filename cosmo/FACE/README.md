@@ -39,7 +39,7 @@ For now, keeping the devices separate during the prototype phase is much more co
 
 # Known Issues:
  1. On older iPads (10+ years), COSMO may not blink in response to API commands. To fix this, go to Settings → Safari → Advanced and enable Web Animation.
- 2. For COSMO Face, it’s best to use the direct IP: http://46.224.122.101/face/ rather than https://cosmo.yes.app/face/. This ensures it works reliably on all devices — PC, old iPads, iPhones, and Android — across all browsers.
+ 2. For COSMO Face, it’s best to use the direct IP: http://46.224.122.101/face/ rather than https://cosmo.yes.app/face/. This ensures it works reliably on all devices — PC, old iPads, iPhones, and Android — across all browsers. If you decide to run your own web server on a Raspberry Pi (ASTRA), you’re welcome to do so.
  3. For your Android Tasker, it’s best to have COSMO Face send commands using the local IP: http://192.168.1.109:1888/ask4. Alternatively, you can modify config.js.
  4. Do not use HTTPS. If you choose to use HTTPS for COSMO Face, be prepared for several challenges. Tapping on the face sends a request to http://192.168.1.109:1888/ask4 (HTTP). Browsers like Firefox and Safari will block this as “mixed active content”, causing errors. The easiest workaround is to use Chrome on PC or Android and allow the necessary permissions.
  

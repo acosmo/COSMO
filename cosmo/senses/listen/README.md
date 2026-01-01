@@ -10,7 +10,7 @@ COSMO 2 Project (COSMO, living in my son’s phone) 😉❤❤❤
 # Usage
     shake phone and magic happends... 😉❤❤❤ 
 
-# Usage 2 (replace IP with your own; see ['listen' folder](senses/listen))
+# Usage 2 (replace IP with your own)
     curl -X GET http://192.168.1.109:1888/ask4
 
 # What you need
