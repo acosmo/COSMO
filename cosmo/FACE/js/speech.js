@@ -8,9 +8,9 @@ function askCOSMO() {
     if (typeof eyes !== 'undefined') {
         eyes.express({ type: 'happy' });  // make eyes happy
     }
-    if (sounds.think) {
-        sounds.think.currentTime = 0;
-        sounds.think.play();
+    if (sounds.smile) {
+        sounds.smile.currentTime = 0;
+        sounds.smile.play();
     }    
 }
 
