@@ -5,9 +5,9 @@
     transform: translate(-50%, -50%);
     width: 1920px; /* full screen */
     height: 1080px;
-    font-size: 200px;
+    font-size: 150px;
     font-weight: bold;
-    background: #ffffff; /* green color, you can change */
+    background: #ffffff;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
@@ -27,7 +27,7 @@
   --face-color: rgb(0, 0, 0);
   --face-height: 100vh;
   --face-width: 100vw;
-  --eye-size: 33.33vmin;
+  --eye-size: 30vmin;
   --eye-color: rgb(255, 255, 255);
   --eyelid-color: rgb(0, 0, 0);
   --mouth-color: rgb(255, 255, 255);
@@ -95,10 +95,10 @@ body {
 
 .mouth {
   position: absolute;
-  bottom: 15%; /* distance from bottom, adjust */
+  bottom: 13%; /* distance from bottom, adjust */
   width: 35vmin;
-  height: 40vmin;
-  border-bottom: 10vmin solid var(--mouth-color); /* mounth thickness */
+  height: 30vmin;
+  border-bottom: 7vmin solid var(--mouth-color); /* mounth thickness */
   border-radius: 0 0 0% 0%; /* can be set to: 0 0 20% 20%, to add curves on mouth*/
   transform: translateX(-50%); /* will center based on resize*/
 }

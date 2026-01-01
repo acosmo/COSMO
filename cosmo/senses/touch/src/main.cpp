@@ -3,7 +3,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-// for different cable/charger/power supply you need to cilibrate and find your TOUCH_THRESHOLD
+// for different cable/charger/power supply you need to calibrate and find your TOUCH_THRESHOLD
 // short  cables > 50-70K
 // medium cables > 70-90K
 // long   cables > 90-100K

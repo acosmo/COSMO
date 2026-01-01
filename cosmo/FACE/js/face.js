@@ -1,5 +1,5 @@
 class EyeController {
-  constructor(elements = {}, eyeSize = '33.33vmin') {
+  constructor(elements = {}, eyeSize = '30vmin') {
     this._eyeSize = eyeSize;
     this._blinkTimeoutID = null;
 

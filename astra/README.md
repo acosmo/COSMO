@@ -1,7 +1,7 @@
 # ASTRA ❤
 ASTRA Project Overview 😉❤❤❤ 
 
-![Logo](https://cosmo.yes.app/astra/astra.jpg)
+![Logo](astra.jpg)
 
 The ASTRA project began after my son asked me to build a **robot** for his granddad, who is disabled. In the UK alone, there are over 3 million people with similar conditions, yet the market lacks accessible and effective products to meet their needs. Seeing this gap, we started an open-source project to develop a small, user-friendly robot designed specifically to help my dad.
 
@@ -27,6 +27,8 @@ The example below shows an evening story scheduled for 8:05 PM each day for my
     5 20 * * * cd /home/pi/COSMO/astra && python laser_eye.py && python stream.py
 
 ### Support the project by purchasing my book [COSMO](https://cosmo.yes.app) All proceeds will be donated to charity and individuals in need, like my dad. It is an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've listened before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
+
+![Logo](astra_real.jpg)
 
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
 
@@ -87,7 +89,9 @@ chmod +x /home/pi/COSMO/astra/laser_eye.py
 chmod +x /home/pi/COSMO/astra/stream.py
 
 # Honorable mentions
+ * Thanks to God that gives...
  * To my father and my son: without them, this project would not exist
+ * Eben Upton from Cambridge for inventing [Raspberry Pi](https://www.raspberrypi.com/) in 2012
  * Anton Hvornum Aka Torxed https://github.com/Torxed/chromecast
  * [Perth Linux User Group](http://plug.org.au/)'s [talk from 2016](https://docs.google.com/presentation/d/1X1BdFunVnLkF7L0BgevH2zzkcSe0_gtdTJ_pMdEuakQ/htmlpresent)
  * [pychromecast](https://github.com/home-assistant-libs/pychromecast) Which had a lot of `URN`'s that could be re-used
