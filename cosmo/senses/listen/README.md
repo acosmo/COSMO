@@ -13,16 +13,74 @@ COSMO 2 Project (COSMO, living in my son’s phone) 😉❤❤❤
 # Usage 2 (replace IP with your own)
     curl -X GET http://192.168.1.109:1888/ask4
 
+# Usage STT
+    Open 'client.html' in the Firefox browser to observe near real-time speech-to-text conversion.
+
 # What you need
     Android phone
     Tasker app
     ChatGPT API key
+    --
+    Optional: VPS server for STT using Whisper.cpp 
+    Bonus: GPU Server for Whisper.cpp for real time STT
 
-How to: 
+Prototype with phone: 
 1. The cosmo_end_talk.xls file needs to be in your Google Drive folder, and you can update with your own short personality prefixes that will be added at 'end talk'. It need to be shared with link as on picture below.
 2. The cosmo.csv file needs to be in your GoogleDrive folder so it can store and be updated with logs of questions, answers, and timestamps.
 ![Logo](config_screenshots/c16.jpg)
-3. If you need more detailed steps, go through the images in the [config_screenshots](config_screenshots) folder one by one.
+
+
+## Bonus: Speech to Text (STT) at home using [Whisper STT](https://openai.com/index/whisper/) library [C++ implementation](https://github.com/ggml-org/whisper.cpp)
+
+### If you’d like to run your own server and test speech-to-text functionality
+    git clone https://github.com/ggml-org/whisper.cpp.git
+
+    # Download models start from tiny, base
+    cd whisper.cpp
+    sh ./models/download-ggml-model.sh tiny.en
+    sh ./models/download-ggml-model.sh base.en
+    sh ./models/download-ggml-model.sh small.en
+    sh ./models/download-ggml-model.sh medium.en
+    sh ./models/download-ggml-model.sh large-v3-turbo-q5_0
+    
+    # Build
+    apt install cmake build-essential
+    cmake -B build
+    cmake --build build -j --config Release
+
+    # Test performance and ensure that transcription of a sample (e.g., JFK speech) completes in under 1 second. 
+    # Choose the appropriate model — tiny, base, small, or medium — depending on your CPU capabilities. 
+    # If you are running on a GPU, transcription will be extremely fast, often around 0.1 seconds.
+    ./build/bin/whisper-cli -f samples/jfk.wav -m models/ggml-tiny.en.bin
+    ./build/bin/whisper-cli -f samples/jfk.wav -m models/ggml-base.en.bin
+
+    # Install Python
+    apt install python3 python3-pip portaudio19-dev python3-dev python3.13-venv ffmpeg -y
+
+    # Add PIP
+    python3 -m venv ~/cosmo
+    source ~/cosmo/bin/activate
+    pip install websockets pydub
+
+    # Start Server Side
+    python server.py
+
+    # Adjust IP in stream.js in line: ws = new WebSocket("ws://46.224.122.101:8181");
+    open client.html, it will connect to your server
+
+# Current Architecture
+    Client side (client.html):
+    1. Records microphone audio
+    2. Splits audio into chunks (streaming)
+    3. Converts to PCM (16 kHz, mono) and sends via WebSocket/HTTP to server
+    4. Receives transcribed text and displays it in real-time
+
+    Server side (server.py):
+    1. Whisper STT library C++ implementation.
+    2. Python script receives PCM stream and constructs wav file
+    3. C++ Whisper model performs STT.
+    4. Returns text to client in real-time.
+
 
 
 ![Logo](config_screenshots/a4.jpg)
