@@ -13,7 +13,7 @@ COSMO 2 Project (COSMO, living in my son’s phone) 😉❤❤❤
 # Usage 2 (replace IP with your own)
     curl -X GET http://192.168.1.109:1888/ask4
 
-# Usage STT
+# Usage STT (Speech-to-Text)
     Open 'client.html' in the Firefox browser to observe near real-time speech-to-text conversion.
 
 # What you need

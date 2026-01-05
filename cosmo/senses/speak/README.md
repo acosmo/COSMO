@@ -1,5 +1,5 @@
 # COSMO 2 ❤
-Prototype TTS (Text To Speach ) via Alexa Speaker😉❤❤❤ 
+Prototype TTS (Text To Speach) via Alexa Speaker😉❤❤❤ 
 
 I wanted to make better use of my Alexa speaker, so I cut the power wire and connected it to a Li-ion battery (fully disconnected from mains power), making it portable. I placed it inside COSMO’s head, secured the battery to the body with tape, and the robot started speaking. With ChatGPT added, COSMO talks far more intelligently than Alexa. Easily transportable, usable in any room. Sentiment analysis is included, and COSMO tailors replies for a 4-year-old kid. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help.
 
