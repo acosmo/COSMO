@@ -30,7 +30,9 @@ If you don’t have a subscription, you can use the [7-day trial version](https:
 2. Generate [ChatGPT API Keys](https://platform.openai.com/settings/organization/api-keys)
 3. Replace all XXXXXX placeholders in [COSMO Task](face/tasker/COSMO_task.prf.txt) with your variables, then either import the file or manually set the steps following my screenshot (folder: [config_screenshots](senses/listen/config_screenshots))
 3. COSMO (ChatGPT) is inside. Shake the phone — it should work. If not, check the config_screenshots:
-4. Bonus: extend COSMO’s senses connecting an ESP32 to any conductive object — metal: Hot Wheels cars, coins, or metal create new touch inputs. Explore the ‘touch’ folder; see ['touch' folder](senses/touch)
+4. Bonus 1: Extend COSMO’s senses connecting an ESP32 to any conductive object — metal: Hot Wheels cars, coins, or metal create new touch inputs. Explore the ‘touch’ folder; see ['touch' folder](senses/touch)
+5. Bonus 2: Extend COSMO’s speaking and brain capabilities with ChatGPT and old Alexa speaker ['speak' folder](senses/speak)
+6. Bonus 3: Extend COSMO’s listening capabilities with your own real-time Speech-to-Text (STT) running on a GPU ['listen/stt' folder](senses/listen/stt)
 
 # Honorable mentions
  * Thanks to God that gives...

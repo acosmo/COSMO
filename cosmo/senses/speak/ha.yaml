@@ -1,0 +1,33 @@
+alias: ChatGPT
+description: ""
+triggers:
+  - trigger: webhook
+    allowed_methods:
+      - POST
+      - PUT
+      - GET
+    local_only: true
+    webhook_id: cosmo
+conditions: []
+actions:
+  - metadata: {}
+    data:
+      text: "{{ trigger.json.text }}"
+      agent_id: conversation.openai_conversation
+    response_variable: ai_out
+    action: conversation.process
+    enabled: true
+  - target:
+      entity_id:
+        - notify.cosmo_speak
+    data:
+      message: >-
+        Hi Richard,  {{ ai_out['response']['speech']['plain']['speech'] |
+        regex_replace(find='[^\w\s,.!?]', replace='')  }}
+    action: notify.send_message
+    enabled: true
+  - action: system_log.write
+    data:
+      level: warning
+      message: GPT Answer {{ ai_out['response']['speech']['plain']['speech']   }}
+mode: single
