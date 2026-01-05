@@ -60,7 +60,6 @@ or run COSMO Face locally via HTTP (e.g., just openeing index.html) so that both
  * [Ably](https://ably.com) for SSE (Server-Sent Events) – plus 6 million free COSMO smiles every month! 😄
  * Thanks to [Apple](https://www.apple.com/), my old iPad mini has become a brand-new COSMO face
  * Thanks to [Pixabay](https://pixabay.com), [Oleg Fedak](https://pixabay.com/users/30064790/), and many more creators for sounds
- * Thanks AWS for hosting and free [EC2 instance](https://aws.amazon.com)
  * Big thanks to [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) for developing HTML in 1991
  * Microsoft for [VS Code](https://code.visualstudio.com/)
 

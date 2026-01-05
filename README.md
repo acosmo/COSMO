@@ -13,7 +13,7 @@ Start in the order described below this will gradually introduce you and your ki
 # Project Overview
 1. COSMO face: rus on PC or old iPad or phone. No hardware or purchases required! Introduce your child to basic programming, including API calls, HTML, CSS, and JavaScript. It’s fun and interactive — COSMO’s face can smile, play tricks on your dog, or even make it think there’s a cat in the house! (check folder [cosmo/face/](cosmo/face/README.md)). 
 2. COSMO listen: Learn how to use public APIs and interact with ChatGPT through code. Also it teach your child to basic phone automation and turns your phone into a powerful tool. Requires budget Android smartphone (£100 Moto G35, can be any Android) that runs Tasker and ChatGPT via API (check folder [cosmo/senses/listen/](cosmo/senses/listen/README.md)). It requires registration with OpenAI, the company behind ChatGPT, and a one-time payment of $5–$10 to obtain your personal ChatGPT API key, which will be used with COSMO. Also requires the Tasker app (available free for 7 days — contact me via [Discord Channel](https://discord.gg/dVgZ73tp6) if you need the link). Bonus: Real time STT (Speech-to-Text) via own GPU server using Whisper.cpp
-3. COSMO speak: Make COSMO speakinng. Hands-on tech fun for parents and kids: explore APIs, integrate systems, and safely work with wires. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help; (check folder [cosmo/senses/speak/](cosmo/senses/speak/README.md)). 
+3. COSMO speak: Make COSMO speaking. Hands-on tech fun for parents and kids: explore APIs, integrate systems, and safely work with wires. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help; (check folder [cosmo/senses/speak/](cosmo/senses/speak/README.md)). 
 4. COSMO touch: A basic introduction to microcontrollers and how to program them in C++. It requires a Heltec V3 or ESP32-S3 (both around £10) and a few wires — no soldering needed. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you’re unsure which to buy (check folder [cosmo/senses/touch/](cosmo/senses/touch/README.md)). 
 5. ASTRA show: Discover fun bedtime automations with your child — like evening stories. It helps you save time while letting you select valuable educational content and schedule when it’s streamed to your kid. A basic introduction to Linux, Raspberry Pi, Python, and IR sensors. Requires: Raspberry Pi and Chromecast - connected to an old TV or £30 Projector via HDMI -> for streaming content (check folder [astra/](astra/README.md))
 6. LUNA car. It teaches C++, HTML, JavaScript, CSS, microcontrollers, motor control, soldering, and how to assemble the entire project. This is our most complex project, requiring a bit of soldering and construction skills for both you and your child, check folder [luna/](luna/README.md)) It uses an ESP8266, [4WD Kit with 4 motors and wheels for £11](https://www.aliexpress.com/item/1005009381370680.html), [L298N for £2](https://www.aliexpress.com/item/1005009009861868.html) motor driver, two Li-ion 18650 batteries and plenty of wires. Watch the detailed assembly video on [YouTube for guidance](https://www.youtube.com/watch?v=dcSIBYogxzA). Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you’re unsure which to buy.
@@ -45,6 +45,17 @@ Below is ASTRA
  * [pychromecast](https://github.com/home-assistant-libs/pychromecast) Which had a lot of `URN`'s that could be re-used
  * [casttube](https://github.com/ur1katz/casttube) Which had all the YouTube Web-API's to manage a YouTube lounge
  * Google for inventing [Chromecast](https://en.wikipedia.org/wiki/Chromecast) in 2013 and making the [ProtoBuf](https://developers.google.com/protocol-buffers/docs/encoding) protocol very open and easy to deconstruct; Google Drive and [Android](https://www.android.com) 
+ * [Amazon Alexa](https://alexa.amazon.com/about) for offering £25 speakers with an excellent TTS API
+ * [Home Assistant](https://www.home-assistant.io/) for integrating Alexa, ChatGPT, Piper, Whisper, and multiple sensors
+ * Jong Wook Kim and Open AI for [Whisper](https://openai.com/index/whisper/) 
+ * Georgi Gerganov for [Whisper C++](https://github.com/ggml-org/whisper.cpp)
+ * Michael Jae-Yoon Chung and his minimalist tablet [tablet-robot-face](https://github.com/mjyc/tablet-robot-face) eyes
+ * [Ably](https://ably.com) for SSE (Server-Sent Events) – plus 6 million free COSMO smiles every month! 😄
+ * Thanks to [Apple](https://www.apple.com/), my old iPad mini has become a brand-new COSMO face
+ * Thanks to [Pixabay](https://pixabay.com), [Oleg Fedak](https://pixabay.com/users/30064790/), and many more creators for sounds
+ * Big thanks to [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) for developing HTML in 1991
+ * Microsoft for [VS Code](https://code.visualstudio.com/)
+ * Guido van Rossum who invented [Python](https://www.python.org/) in 1990
 
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
 
