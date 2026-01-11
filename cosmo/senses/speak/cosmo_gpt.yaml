@@ -1,4 +1,4 @@
-alias: ChatGPT
+alias: COSMO_GPT
 description: ""
 triggers:
   - trigger: webhook
@@ -7,12 +7,12 @@ triggers:
       - PUT
       - GET
     local_only: true
-    webhook_id: cosmo
+    webhook_id: cosmo_gpt
 conditions: []
 actions:
   - metadata: {}
     data:
-      text: "{{ trigger.json.text }}"
+      text: "{{ trigger.json.voice }}"
       agent_id: conversation.openai_conversation
     response_variable: ai_out
     action: conversation.process
@@ -29,5 +29,5 @@ actions:
   - action: system_log.write
     data:
       level: warning
-      message: GPT Answer {{ ai_out['response']['speech']['plain']['speech']   }}
+      message: COSMO speech: {{ ai_out['response']['speech']['plain']['speech']   }}
 mode: single
