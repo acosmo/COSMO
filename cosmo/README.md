@@ -44,6 +44,10 @@ If you don’t have a subscription, you can use the [7-day trial version](https:
  * [Espressif](https://www.espressif.com/) Systems for ESP32 and ESP8266 
  * [Heltec Automation](https://heltec.org/) 
  * Mattel for Hot wheels Die-Cast Cars
+ * Amazon [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop_bar_Alexa%2B_shopall) who offers £25 speakers with an excellent TTS capabilities
+ * Simone Chemelli for Python [library](https://github.com/chemelli74/aioamazondevices) to control Amazon devices
+ * Marcelo Trylesinski for [Uvicorn](https://github.com/Kludex/uvicorn) server on Python
+ * Home Assistant for integrating Alexa, ChatGPT, Piper, Whisper, and multiple sensors 
 
 
 

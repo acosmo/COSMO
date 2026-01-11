@@ -45,7 +45,6 @@ Below is ASTRA
  * [pychromecast](https://github.com/home-assistant-libs/pychromecast) Which had a lot of `URN`'s that could be re-used
  * [casttube](https://github.com/ur1katz/casttube) Which had all the YouTube Web-API's to manage a YouTube lounge
  * Google for inventing [Chromecast](https://en.wikipedia.org/wiki/Chromecast) in 2013 and making the [ProtoBuf](https://developers.google.com/protocol-buffers/docs/encoding) protocol very open and easy to deconstruct; Google Drive and [Android](https://www.android.com) 
- * [Amazon Alexa](https://alexa.amazon.com/about) for offering £25 speakers with an excellent TTS API
  * [Home Assistant](https://www.home-assistant.io/) for integrating Alexa, ChatGPT, Piper, Whisper, and multiple sensors
  * Jong Wook Kim and Open AI for [Whisper](https://openai.com/index/whisper/) 
  * Georgi Gerganov for [Whisper C++](https://github.com/ggml-org/whisper.cpp)
@@ -56,6 +55,9 @@ Below is ASTRA
  * Big thanks to [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) for developing HTML in 1991
  * Microsoft for [VS Code](https://code.visualstudio.com/)
  * Guido van Rossum who invented [Python](https://www.python.org/) in 1990
+ * Amazon [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop_bar_Alexa%2B_shopall) who offers £25 speakers with an excellent TTS capabilities
+ * Simone Chemelli for Python [library](https://github.com/chemelli74/aioamazondevices) to control Amazon devices
+ * Marcelo Trylesinski for [Uvicorn](https://github.com/Kludex/uvicorn) server on Python
 
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
 

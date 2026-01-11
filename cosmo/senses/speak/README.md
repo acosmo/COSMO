@@ -1,15 +1,20 @@
 # COSMO 2 ❤
-Prototype TTS (Text To Speech) via Alexa Speaker😉❤❤❤ 
+TTS (Text To Speech) via Alexa Speaker😉❤❤❤ 
+
+![IMG](speech.jpg)
 
 I wanted to make better use of my Alexa speaker, so I cut the power wire and connected it to a Li-ion battery (fully disconnected from mains power), making it portable. I placed it inside COSMO’s head, secured the battery to the body with tape, and the robot started speaking. With ChatGPT added, COSMO talks far more intelligently than Alexa. Easily transportable, usable in any room. Sentiment analysis is included, and COSMO tailors replies for a kid. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help.
 
-COSMO Brain API for free!
+(COSMO Brain API for free!
 You can use it absolutely free, with a limit of 40 responses per hour — plenty for asking questions.
 Each question can be up to 100 characters, enough to make a clear and logical query.
-All answers are simplified for kids, easy to understand and fun!
+All answers are simplified for kids, easy to understand and fun!)
+
+![IMG](cosmo_real.jpg)
 
 # Usage and voice responses over Alexa speaker using native TTS
 #### Use with COSMO brain API with rate limit 40/hour and 100 chars per question
+    curl http://cosmo_tts_server_ip:8002/speak?t=hi
     curl http://46.224.122.101:8081/brain?q=atom
 
     Q: "atom" 
@@ -71,39 +76,59 @@ All answers are simplified for kids, easy to understand and fun!
     A:Let's play 'Would You Rather' Here's my first question:
     Would you rather have a pet dragonfly that could talk to you or a pet goldfish that could turn into a puppy?
 
-#### Home Assitant Voice over Alexa (see [speak.ipynb](../../brain/brain.ipynb))
-    curl http://192.168.1.211:8123/api/webhook/cosmo -H "Content-Type: application/json" -d '{"voice": "Raspberri PI"}'
+# What you will need: 
+Any [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop_bar_Alexa%2B_shopall): (5 year old will work too). Any cheapest Echo Pop (shown above) for £25 will work as well.
+
+### How to make COSMO speaking: 
+### 1. Before running generate 'login_data.json' using:
+    git clone https://github.com/chemelli74/aioamazondevices.git
+    cd aioamazondevices/
+    python library_test.py --email "your_amazon_alexa_email" --password "your_amazon_alexa_password"
+
+    If OTP is not enabled in Alexa you will need to enable it:
+    https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=201962400
+    https://www.amazon.co.uk/gp/css/account/info/view.html
+
+### 2. Run python server 
+    set path to your LOGIN_DATA_FILE = "2026-01-11-login_data.json" in cosmo_tts_server.py
+    python cosmo_tts_server.py
+
+![IMG](speak.jpg)
+    
+### 3. Use API
+    curl http://cosmo_tts_server_ip:8002/speak?t=hi
+
+#### Old Home Assitant Voice over Alexa (see [speak.ipynb](../../brain/brain.ipynb)) (not recommended)
+    curl http://home_assistant_ip:8123/api/webhook/cosmo -H "Content-Type: application/json" -d '{"voice": "Raspberri PI"}'
 
     Q: "Raspberri PI"
     A: A Raspberry Pi is just a tiny computer tiny‑bit bigger than a postage stamp that fits right in your pocket—like a wizard’s brain all in a toy box. People play with it to build robots, paint moving pictures on a screen, play custom video game adventures, and even turn regular LEGO pieces into a dancing and buzzing robot buddy. 😃😻😺😹🙈🙊
 
-#### Native OpenAI ChatGPT response paid 
-    curl http://192.168.1.211:8123/api/webhook/cosmo_gpt -H "Content-Type: application/json" -d '{"voice": "1+1"}'
+#### Old OpenAI ChatGPT response paid (not recommended)
+    curl http://home_assistant_ip:8123/api/webhook/cosmo_gpt -H "Content-Type: application/json" -d '{"voice": "1+1"}'
 
     Q: 1+1
     A: 1 + 1 equals 2! 🎉 It's like having one cookie and getting another — now you have two cookies to munch on! 🍪🍪
 
-
-![IMG](cosmo_real.jpg)
-
-# To make it running: 
+#### Home Assistant method (not recommended)
 1. You’ll need [Home Assistant](https://www.home-assistant.io/) up and running
 2. Install Home Assistant on Raspberry PI 5 or 4 or on [Linux](https://www.home-assistant.io/installation/linux/) (no Raspberry PI required)
 3. Get ChatGPI API KEY and configure in Home Assistant: [config_screenshots](config_screenshots). Not needed if you use COSMO Brain API (free)
-4. Get any Alexa: (5 year old will work) [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop_bar_Alexa%2B_shopall) speaker will work The cheapest Echo Pop (shown above) for £25 will work as well.
-5. Integrate Alexa into Home Assistant: [config_screenshots](config_screenshots) or [cosmo.yaml](cosmo.yaml)
+4. Integrate Alexa into Home Assistant: [config_screenshots](config_screenshots) or [cosmo.yaml](cosmo.yaml)
 
-# Test
-    curl -X POST -H "Authorization: Bearer YOUR_HOME_ASSISTANT_API_KEY" -H "Content-Type: application/json" -d '{"text": "1+1", "agent_id": "conversation.openai_conversation"}' http://192.168.1.211:8123/api/conversation/process
+#### Test Home Assistant method (not recommended)
+    curl -X POST -H "Authorization: Bearer YOUR_HOME_ASSISTANT_API_KEY" -H "Content-Type: application/json" -d '{"text": "1+1", "agent_id": "conversation.openai_conversation"}' http://home_assistant_ip:8123/api/conversation/process
 
-# Notes
-    192.168.1.211 - is your home Home Assistant IP
+#### Notes Home Assistant method (not recommended)
+    home_assistant_ip - is your home Home Assistant IP
     YOUR_HOME_ASSISTANT_API_KEY is your Bearer Authorization API key in Home Assistant
 
 # Honorable mentions
  * Thanks to God that gives...
  * To my father and my son: without them, this project would not exist
- * Amazon Alexa offers £25 speakers with an excellent TTS API
+ * Amazon [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop_bar_Alexa%2B_shopall) who offers £25 speakers with an excellent TTS capabilities
+ * Simone Chemelli for Python [library](https://github.com/chemelli74/aioamazondevices) to control Amazon devices
+ * Marcelo Trylesinski for [Uvicorn](https://github.com/Kludex/uvicorn) server on Python
  * Home Assistant for integrating Alexa, ChatGPT, Piper, Whisper, and multiple sensors
  * OpenAI for ChatGPI
 
