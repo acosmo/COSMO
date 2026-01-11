@@ -65,7 +65,7 @@ A: You can turn your extra toys, cards, or home‑made treats into quick money b
 Q: "Investing"
 A: Investing is like planting a garden. You put money in (like seeds) and hopefully, it will grow into more money over time!
 
-## Using Brain and TTS in Jupyter Nnotebook
+## Using Brain and TTS in Jupyter Notebook
     source ~/cosmo/bin/activate
     pip install jupyter
 
