@@ -1,8 +1,8 @@
 # COSMO Senses ❤
 
-Recently, my dog asked to be stroked, and my son and I thought — why not add something similar to COSMO? 
+## Recently, my dog asked to be stroked, and my son and I thought — why not add something similar to COSMO? 
 
-I was looking for such sensors, but found that many available options didn’t fit my needs. This led me to the idea of building my own sensor. I chose the ESP32 for the project (I used the ESP32 Heltec V3, though I recommend the ESP32-S3 for future). By attaching a few of my son’s metal toy cars, we were able to activate ChatGPT in COSMO whenever the car was touched. You can extend COSMO’s senses by connecting an ESP32 to any conductive object — metal: Hot Wheels cars, coins, or metal create new touch inputs. 
+### I was looking for such sensors, but found that many available options didn’t fit my needs. This led me to the idea of building my own sensor. I chose the ESP32 for the project (I used the ESP32 Heltec V3, though I recommend the ESP32-S3 for future). By attaching a few of my son’s metal toy cars, we were able to activate ChatGPT in COSMO whenever the car was touched. You can extend COSMO’s senses by connecting an ESP32 to any conductive object — metal: Hot Wheels cars, coins, or metal create new touch inputs. 
 
 ![Logo](cosmo_hand.jpg)
 

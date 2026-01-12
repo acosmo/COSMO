@@ -1,7 +1,7 @@
 # COSMO 2 ❤
-COSMO 2 Project (COSMO, living in my son’s phone) 😉❤❤❤ 
+### COSMO, living in my son’s phone 😉❤❤❤ 
 
-Later an idea came to build a helper for my son. He was bombarding me with questions, and since he cannot use Google yet, I decided to automate it. I bought him a simple [£100 phone](https://www.gsmarena.com/motorola_moto_g35-13288.php) and installed [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_GB), which redirects all his questions to ChatGPT. Using Google TTS (Text-to-Speech) and STT (Speech-to-Text), COSMO explains the answers in a way that matches his age.
+### An idea came to build a helper for my son. He was bombarding me with questions, and since he cannot use Google yet, I decided to automate it. I bought him a simple [£100 phone](https://www.gsmarena.com/motorola_moto_g35-13288.php) and installed [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_GB), which redirects all his questions to ChatGPT. Using Google TTS (Text-to-Speech) and STT (Speech-to-Text), COSMO explains the answers in a way that matches his age.
 
 ![Logo](https://cosmo.yes.app/cosmo2/cosmo2.jpg)
 

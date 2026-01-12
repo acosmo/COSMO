@@ -1,12 +1,13 @@
 # COSMO ❤
-COSMO Face
+## COSMO Face
 
-While looking at my old iPad sitting in the drawer, I thought, this could be a COSMO face.
-I turned to my son and asked, “Would you want COSMO to have its own face?”...
+### While looking at my old iPad sitting in the drawer, I thought, this could be a COSMO face. I turned to my son and asked, “Would you want COSMO to have its own face?”...
 
 ### Recent studies show that people often prefer a digital face over a physical one. A screen-based face is easy to build, customize, and update. I can create any combination of eyes, smiles, gestures, and templates — and even let the face grow and age over time alongside the robot. Plus, I can display technical information, like debug data, right on the screen.
 
-And so, my old iPad mini became the perfect candidate for COSMO’s new face.
+### And so, my old iPad mini became the perfect candidate for COSMO’s new face.
+
+![Logo](face.jpg)
 
 #### I’m currently using two separate devices for COSMO (you can use one, but read below)
     * One is an Android phone running COSMO, which acts as the “brain” and handles voice processing (Samsung or Google: TTS/STT, Tasker, ChatGPT API, web server). Its screen stays off, but it can still receive HTTP GET requests
@@ -20,7 +21,7 @@ For now, keeping the devices separate during the prototype phase is much more co
 1. Open [https://cosmo.yes.app/](http://46.224.122.101/face/) works from Chrome PC, Android, iPad, iPhone
 2. Import [COSMO Listen Profile](tasker/COSMO_listen.prf.txt) into your Tasker and link with [COSMO Task](tasker/COSMO_task.prf.txt)
 
-![Logo](face.jpg)
+![IMG](luna_face.jpg)
 
 # Send 'smile' command
     curl -X POST https://rest.ably.io/channels/cosmo_face/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL","data": "smile" }'
@@ -34,7 +35,6 @@ For now, keeping the devices separate during the prototype phase is much more co
 # Emotions
     Pressing on COSMO face should activate "ChatGPT" in phone tasker
 
-![IMG](luna_face.jpg)
 ![IMG](../cosmo_real.jpg)
 
 # Known Issues:

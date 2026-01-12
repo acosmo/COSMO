@@ -1,12 +1,12 @@
 # COSMO 2 ❤
-TTS (Text To Speech) via Alexa Speaker😉❤❤❤ 
+## TTS (Text To Speech) via Alexa Speaker😉❤❤❤ 
+
+### I wanted to make better use of my Alexa speaker, so I cut the power wire and connected it to a Li-ion battery (fully disconnected from mains power), making it portable. I placed it inside COSMO’s head, secured the battery to the body with tape, and the robot started speaking. With ChatGPT added, COSMO talks far more intelligently than Alexa. Easily transportable, usable in any room. Sentiment analysis is included, and COSMO tailors replies for a kid. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help.
 
 ![IMG](speech.jpg)
 
-I wanted to make better use of my Alexa speaker, so I cut the power wire and connected it to a Li-ion battery (fully disconnected from mains power), making it portable. I placed it inside COSMO’s head, secured the battery to the body with tape, and the robot started speaking. With ChatGPT added, COSMO talks far more intelligently than Alexa. Easily transportable, usable in any room. Sentiment analysis is included, and COSMO tailors replies for a kid. Contact me on [Discord Channel](https://discord.gg/dVgZ73tp6) if you need any help.
-
-(COSMO Brain API for free!
-You can use it absolutely free, with a limit of 40 responses per hour — plenty for asking questions.
+Now COSMO Brain API is free!
+You can use it absolutely for free, with a limit of 40 responses per hour — plenty for asking questions.
 Each question can be up to 100 characters, enough to make a clear and logical query.
 All answers are simplified for kids, easy to understand and fun!)
 
