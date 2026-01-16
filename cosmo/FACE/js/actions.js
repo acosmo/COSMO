@@ -57,6 +57,16 @@ async function getStarted() {
             sounds.smile.currentTime = 0;
             sounds.smile.play();
         }
+        if (message.data === 'smell') {
+            eyes.express({ type: 'focused' });
+            sounds.smell.currentTime = 0;
+            sounds.smell.play();
+        }
+        if (message.data === 'cough') {
+            eyes.express({ type: 'angry' });
+            sounds.cough.currentTime = 0;
+            sounds.cough.play();
+        }            
         // Blinking
         if (message.data === 'blink') {
             eyes.blink()
