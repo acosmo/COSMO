@@ -9,6 +9,7 @@
 
 # Make it working
   * Flash ESP-32 with smell.cpp
+  * Get CCS811 sensor for £5
   * Eat orange near COSMO 
 
 # Send 'smell' command
