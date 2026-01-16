@@ -43,10 +43,7 @@ void setup() {
         delay(500);
         Serial.print(".");
     }
-    Serial.println("\nConnected to COSMO");
-
-    while (!Serial) delay(10);
-
+    Serial.println("Connected to COSMO");
     Serial.println("COSMO brain loaded");
 
     Wire.begin(SDA_PIN, SCL_PIN);
@@ -114,10 +111,10 @@ void loop() {
       Serial.print(tvoc);
       Serial.println(" ppb");
 
-      // Send to COSMO if eCO2 > 500 ppm
+      // Send to COSMO if TVOC > 500 ppb
       if (tvoc > 50 && millis() - lastSendTime > sendInterval) {
         Serial.println("COSMO smell detected");
-        sendToCosmo(0); // sense value unused, but kept for compatibility
+        sendToCosmo(0);
         lastSendTime = millis();
       }
 
