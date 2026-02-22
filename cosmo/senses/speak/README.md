@@ -81,7 +81,9 @@ Any [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop
 
 ### How to make COSMO speaking: 
 ### 1. Before running generate 'login_data.json' using:
+    sudo pip3 install --break-system-packages orjson aiohttp anyio colorlog aioamazondevices
     git clone https://github.com/chemelli74/aioamazondevices.git
+
     cd aioamazondevices/
     python library_test.py --email "your_amazon_alexa_email" --password "your_amazon_alexa_password"
 

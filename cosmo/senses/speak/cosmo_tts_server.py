@@ -21,7 +21,7 @@ from contextlib import asynccontextmanager
 # https://www.amazon.co.uk/gp/css/account/info/view.html
 # --------------------------
 
-LOGIN_DATA_FILE = "login_data.json"
+LOGIN_DATA_FILE = ".local/login_data.json"
 
 # --------------------------
 # Globals
