@@ -79,6 +79,7 @@ while len(video_ids) < max_to_fetch:
         "order": "date",
         "maxResults": max_results,
         "type": "video",
+        "videoDuration": "medium", # videos between 4–20 min
         "pageToken": next_page_token
     }
     resp = requests.get(base_url, params=params).json()

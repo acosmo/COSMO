@@ -27,6 +27,8 @@ The example below shows an evening story scheduled for 8:05 PM each day for my
 
 # Prerequisites:
     Generate your Youtube API key https://console.cloud.google.com/apis first
+    rename .local_example -> .local
+    read .local_example/README.md
     
 # Run below populate your DB for evening stories, math or any other high-quality content:
     python get_videos.py mathantics
