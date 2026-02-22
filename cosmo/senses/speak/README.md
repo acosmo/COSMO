@@ -94,14 +94,27 @@ Any [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop
     https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=201962400
     https://www.amazon.co.uk/gp/css/account/info/view.html
 
-### 2. Run python server 
+### 2. Run python server manually
     python cosmo_tts_server.py
 
 ![IMG](speak.jpg)
-    
-### 3. Use API
+
+### 3. Run python server with selected Alexa device
+    python cosmo_tts_server.py 2
+
+### 4. Create cosmo_tts.service
+    nano /etc/systemd/system/cosmo_tts.service
+    systemctl daemon-reload
+    systemctl enable cosmo_tts.service
+    systemctl start cosmo_tts.service
+
+### 5. Test COSMO TTS via API
     curl http://cosmo_tts_server_ip:8002/speak?t=hi
 
+### 6. Debug and profile
+    journalctl -u cosmo_tts.service -f
+
+## Deprecated:
 #### Old Home Assitant Voice over Alexa (see [speak.ipynb](../../brain/brain.ipynb)) (not recommended)
     curl http://home_assistant_ip:8123/api/webhook/cosmo -H "Content-Type: application/json" -d '{"voice": "Raspberri PI"}'
 

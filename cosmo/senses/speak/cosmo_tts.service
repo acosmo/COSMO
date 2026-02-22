@@ -1,0 +1,12 @@
+[Unit]
+Description=Cosmo TTS Server
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/pi/COSMO/cosmo/senses/speak
+ExecStart=/usr/bin/python3 /home/pi/COSMO/cosmo/senses/speak/cosmo_tts_server.py 2
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
