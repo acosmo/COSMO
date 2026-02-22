@@ -38,4 +38,5 @@ time.sleep(40)
 
 # Select HDMI output
 subprocess.run([PIIR_PATH, "play", "--gpio", "18", "--file", "light.json", "left"])
+time.sleep(1)
 subprocess.run([PIIR_PATH, "play", "--gpio", "18", "--file", "light.json", "ok"])
