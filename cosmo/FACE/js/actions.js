@@ -66,7 +66,12 @@ async function getStarted() {
             eyes.express({ type: 'angry' });
             sounds.cough.currentTime = 0;
             sounds.cough.play();
-        }            
+        }
+        if (message.data === 'air') {
+            eyes.express({ type: 'angry' });
+            sounds.air.currentTime = 0;
+            sounds.air.play();
+        }           
         // Blinking
         if (message.data === 'blink') {
             eyes.blink()

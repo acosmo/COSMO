@@ -10,7 +10,7 @@
 # Make it working
   * Flash ESP-32 with smell.cpp
   * Get CCS811 sensor for £5
-  * Eat orange near COSMO 
+  * Eat orange near COSMO
 
 # Send 'smell' command
    curl -X POST https://rest.ably.io/channels/cosmo_face/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL","data": "smell" }'

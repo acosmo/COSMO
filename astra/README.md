@@ -25,6 +25,14 @@ The example below shows an evening story scheduled for 8:05 PM each day for my
 # Usage
     5 20 * * * cd /home/pi/COSMO/astra && python laser_eye.py && python stream.py
 
+# Prerequisites:
+    Generate your Youtube API key https://console.cloud.google.com/apis first
+    
+# Run below populate your DB for evening stories, math or any other high-quality content:
+    python get_videos.py mathantics
+    python get_videos.py ScratchGarden
+    etc
+
 ### Support the project by purchasing my book [COSMO](https://cosmo.yes.app) All proceeds will be donated to charity and individuals in need, like my dad. It is an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've listened before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
 
 ![Logo](astra_real.jpg)

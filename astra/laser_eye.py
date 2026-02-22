@@ -4,8 +4,8 @@ IR module for operating the Magcubic HY320 Mini Projector and any IR-controlled 
 Most TVs can be controlled via Tuya smart sockets, but projectors require IR switch
 (I've tried using IR Tuya switch, but it haven't worked as I expected, so I opted for my own custom IR switch module)
 
-You will need for $1 Infrared Receiver / Transmitter https://www.aliexpress.com/item/1005006385368806.html
-see astra\ir_pinout.jpg
+You will need for 1 USD Infrared Receiver / Transmitter https://www.aliexpress.com/item/1005006385368806.html
+see astra folder -> ir_pinout.jpg
 
 pip3 install PiIR
 or

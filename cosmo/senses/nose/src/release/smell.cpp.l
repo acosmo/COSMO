@@ -1,5 +1,6 @@
 /*
 Important: Connect WAK to GND
+
 ESP32 S3 pinout to CCS811 sensor
         16   -> SDA
         18   -> SCL
@@ -9,7 +10,7 @@ ESP32 S3 pinout to CCS811 sensor
 
 For now, feel free to use my keys — that gives you up to 6 million smell detections each month.
 
-# Define below in config.h
+# Define below WIFI SSID/password in config.h
 
 // COSMO server endpoint
 const char* url = "https://rest.ably.io/channels/cosmo_face/messages";

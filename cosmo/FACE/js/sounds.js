@@ -3,6 +3,7 @@ const sounds = {
     blink: new Audio('sounds/blink.mp3'),
     smell: new Audio('sounds/smell.mp3'),
     cough: new Audio('sounds/cough.mp3'),
+    air: new Audio('sounds/air.mp3'),    
     sad: new Audio('sounds/sad.mp3'),
     angry: new Audio('sounds/angry.mp3'),
     focused: new Audio('sounds/focused.mp3'),
