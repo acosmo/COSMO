@@ -15,8 +15,11 @@ Generate your Youtube API key https://console.cloud.google.com/apis first
 import requests
 import sys
 import os
+import isodate
 
-# Step 0: Read API key from file in .local folder
+# -----------------------------
+# Step 0: Read API key
+# -----------------------------
 api_key_path = os.path.join(".local", "youtube_api_key.txt")
 try:
     with open(api_key_path, "r") as f:
@@ -26,25 +29,27 @@ except FileNotFoundError:
     sys.exit(1)
 
 if len(sys.argv) < 2:
-    print("Usage: python get_videos.py <channel_name_or_handle>")
+    print("Usage: python y.py <channel_name_or_handle>")
     sys.exit(1)
 
 channel_name = sys.argv[1]
 
-# Step 1: Get channel ID from username or handle
+# -----------------------------
+# Step 1: Get channel ID and uploads playlist ID
+# -----------------------------
 url_channel = "https://www.googleapis.com/youtube/v3/channels"
 params_channel = {
     "key": API_KEY,
-    "forUsername": channel_name,  # for legacy usernames
-    "part": "id"
+    "forUsername": channel_name,
+    "part": "id,contentDetails"
 }
-
 response = requests.get(url_channel, params=params_channel).json()
 
 if "items" in response and len(response["items"]) > 0:
     channel_id = response["items"][0]["id"]
+    uploads_playlist_id = response["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
 else:
-    # Try by handle (modern @handle)
+    # Try by handle
     url_search = "https://www.googleapis.com/youtube/v3/search"
     params_search = {
         "key": API_KEY,
@@ -56,47 +61,106 @@ else:
     response_search = requests.get(url_search, params=params_search).json()
     if "items" in response_search and len(response_search["items"]) > 0:
         channel_id = response_search["items"][0]["snippet"]["channelId"]
+        # Get uploads playlist
+        url_channel = "https://www.googleapis.com/youtube/v3/channels"
+        params_channel = {
+            "key": API_KEY,
+            "id": channel_id,
+            "part": "contentDetails"
+        }
+        resp2 = requests.get(url_channel, params=params_channel).json()
+        uploads_playlist_id = resp2['items'][0]['contentDetails']['relatedPlaylists']['uploads']
     else:
         print("Channel not found")
         sys.exit(1)
 
 print(f"Found Channel ID: {channel_id}")
+print(f"Uploads playlist ID: {uploads_playlist_id}")
 
-# Step 2: Fetch first 100 videos
-video_ids = []
+# -----------------------------
+# Step 2: Fetch videos >5 min from uploads playlist (latest first)
+# -----------------------------
+playlist_url = "https://www.googleapis.com/youtube/v3/playlistItems"
+video_url = "https://www.googleapis.com/youtube/v3/videos"
+
+medium_videos = []
 next_page_token = None
 max_to_fetch = 100
-base_url = "https://www.googleapis.com/youtube/v3/search"
 
-while len(video_ids) < max_to_fetch:
-    remaining = max_to_fetch - len(video_ids)
-    max_results = 50 if remaining > 50 else remaining  # API max per page is 50
-
+while len(medium_videos) < max_to_fetch:
     params = {
         "key": API_KEY,
-        "channelId": channel_id,
-        "part": "id",
-        "order": "date",
-        "maxResults": max_results,
-        "type": "video",
-        "videoDuration": "medium", # videos between 4–20 min
+        "playlistId": uploads_playlist_id,
+        "part": "contentDetails,snippet",
+        "maxResults": 50,
         "pageToken": next_page_token
     }
-    resp = requests.get(base_url, params=params).json()
-    for item in resp.get("items", []):
-        video_ids.append(item["id"]["videoId"])
-
-    next_page_token = resp.get("nextPageToken")
-    if not next_page_token:
+    resp = requests.get(playlist_url, params=params).json()
+    if "items" not in resp or len(resp["items"]) == 0:
         break
 
-# Step 3: Write video IDs to .local/db/<channel_name>.txt
+    # Collect video IDs from this page
+    batch_ids = [item["contentDetails"]["videoId"] for item in resp["items"]]
+
+    # Fetch video durations in batches (max 50 per request)
+    for i in range(0, len(batch_ids), 50):
+        sub_ids = batch_ids[i:i+50]
+        params_v = {
+            "key": API_KEY,
+            "id": ",".join(sub_ids),
+            "part": "contentDetails"
+        }
+        resp_v = requests.get(video_url, params=params_v).json()
+        for item in resp_v.get("items", []):
+            duration_iso = item.get("contentDetails", {}).get("duration")
+            if not duration_iso:
+                continue
+            try:
+                duration_sec = int(isodate.parse_duration(duration_iso).total_seconds())
+            except Exception:
+                continue
+            if duration_sec >= 300:  # 5+ minutes
+                medium_videos.append(item["id"])
+                if len(medium_videos) >= max_to_fetch:
+                    break
+
+    nextPage = resp.get("nextPageToken")
+    if not nextPage or len(medium_videos) >= max_to_fetch:
+        break
+    next_page_token = nextPage
+
+print(f"Collected {len(medium_videos)} videos ≥5 min")
+
+# -----------------------------
+# Step 3: Sort by latest upload
+# -----------------------------
+# Build id -> publishedAt mapping from first pages
+id_to_date = {}
+# Re-fetch snippet data for sorting (if needed)
+for i in range(0, len(batch_ids), 50):
+    sub_ids = batch_ids[i:i+50]
+    params_v = {
+        "key": API_KEY,
+        "id": ",".join(sub_ids),
+        "part": "snippet"
+    }
+    resp_v = requests.get(video_url, params=params_v).json()
+    for item in resp_v.get("items", []):
+        vid_id = item["id"]
+        if vid_id in medium_videos:
+            id_to_date[vid_id] = item["snippet"]["publishedAt"]
+
+medium_videos.sort(key=lambda x: id_to_date.get(x, ""), reverse=True)
+
+# -----------------------------
+# Step 4: Save to .local/db/<channel_name>.txt
+# -----------------------------
 output_dir = os.path.join(".local", "db")
 os.makedirs(output_dir, exist_ok=True)
 output_file = os.path.join(output_dir, f"{channel_name}.txt")
 
 with open(output_file, "w") as f:
-    for vid in video_ids:
+    for vid in medium_videos:
         f.write(f"{vid}\n")
 
-print(f"Saved {len(video_ids)} video IDs to {output_file}")
+print(f"Saved {len(medium_videos)} videos (>5 min) to {output_file}")

@@ -8,8 +8,9 @@ You will need for 1 USD Infrared Receiver / Transmitter https://www.aliexpress.c
 see astra folder -> ir_pinout.jpg
 
 pip3 install PiIR
+pip3 install isodate
 or
-python3 -m pip install PiIR --break-system-packages
+python3 -m pip install PiIR isodate --break-system-packages
 
 apt install pigpio python3-pigpio
 
