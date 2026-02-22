@@ -81,18 +81,20 @@ Any [Alexa](https://www.amazon.com/b?node=9818047011&ref_=MARS_NAVSTRIPE_desktop
 
 ### How to make COSMO speaking: 
 ### 1. Before running generate 'login_data.json' using:
-    sudo pip3 install --break-system-packages orjson aiohttp anyio colorlog aioamazondevices
+    sudo pip3 install --break-system-packages orjson aiohttp anyio colorlog aioamazondevices fastapi uvicorn
     git clone https://github.com/chemelli74/aioamazondevices.git
 
     cd aioamazondevices/
-    python library_test.py --email "your_amazon_alexa_email" --password "your_amazon_alexa_password"
+    1. python library_test.py --email "your_amazon_alexa_email" --password "your_amazon_alexa_password"
+
+    2. mkdir .local
+    3. place content of newly generated "login_data.json" into '.local' folder
 
     If OTP is not enabled in Alexa you will need to enable it:
     https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=201962400
     https://www.amazon.co.uk/gp/css/account/info/view.html
 
 ### 2. Run python server 
-    set path to your LOGIN_DATA_FILE = "2026-01-11-login_data.json" in cosmo_tts_server.py
     python cosmo_tts_server.py
 
 ![IMG](speak.jpg)

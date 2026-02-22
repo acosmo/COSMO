@@ -1,6 +1,7 @@
 import asyncio
 import json
 import time
+import sys
 from pathlib import Path
 from aiohttp import ClientSession
 from aioamazondevices.api import AmazonEchoApi
@@ -11,17 +12,14 @@ import socket
 from contextlib import asynccontextmanager
 
 # --------------------------
-# Before running generate 'login_data.json' using:
-# git clone https://github.com/chemelli74/aioamazondevices.git
-# cd aioamazondevices/
-# python library_test.py --email "your_amazon_alexa_email" --password "your_amazon_alexa_password"
-#
-# If OTP is not enabled in Alexa you will need to enable it:
-# https://www.amazon.co.uk/gp/help/customer/display.html?nodeId=201962400
-# https://www.amazon.co.uk/gp/css/account/info/view.html
+# Before running generate 'login_data.json', see README.md
 # --------------------------
 
+# --------------------------
+# CONFIG
+# --------------------------
 LOGIN_DATA_FILE = ".local/login_data.json"
+SERVER_PORT = 8002
 
 # --------------------------
 # Globals
@@ -31,7 +29,6 @@ CLIENT_SESSION = None
 DEVICES = []
 SELECTED_DEVICE = None
 SERVER_IP = None
-SERVER_PORT = 8002  # default
 
 # --------------------------
 # Cleanup
@@ -73,25 +70,24 @@ async def lifespan(app: FastAPI):
     global SERVER_IP
     print("[INFO] Starting TTS COSMO Server...")
     SERVER_IP = get_lan_ip()
+
     await init_api()
     print("[INFO] Speech is ready")
 
-    # --------------------------
-    # Announce automatically on server start
-    # --------------------------
+    # Auto announcement on startup
     startup_message = "hmmmm, Finally, you got me talking! Took you long enough—almost ages!"
     await send_announcement(startup_message)
 
-    print(f"COSMO API available. Try -> http://{SERVER_IP}:{SERVER_PORT}/speak?t=hi")
+    print(f"COSMO API available -> http://{SERVER_IP}:{SERVER_PORT}/speak?t=hi")
+
     yield
 
-    # Optionally, cleanup after shutdown
     close_client_session()
 
 app = FastAPI(title="COSMO TTS", lifespan=lifespan)
 
 # --------------------------
-# Initialize API & prompt device selection
+# Initialize API
 # --------------------------
 async def init_api():
     global API_INSTANCE, CLIENT_SESSION, DEVICES, SELECTED_DEVICE
@@ -133,19 +129,29 @@ async def init_api():
         )
 
     # --------------------------
-    # Prompt user selection
+    # Device Selection Logic
     # --------------------------
-    while True:
+    if len(sys.argv) > 1:
+        # Command-line argument provided
         try:
-            choice = input("\nSelect COSMO speech device: ").strip()
-            index = int(choice)
+            index = int(sys.argv[1])
             SELECTED_DEVICE = DEVICES[index]
-            break
+            print(f"\n[INFO] Auto-selected device index {index}")
         except (ValueError, IndexError):
-            print("Invalid selection, try again.")
+            raise RuntimeError("Invalid device index passed as argument")
+    else:
+        # Manual selection
+        while True:
+            try:
+                choice = input("\nSelect COSMO speech device: ").strip()
+                index = int(choice)
+                SELECTED_DEVICE = DEVICES[index]
+                break
+            except (ValueError, IndexError):
+                print("Invalid selection, try again.")
 
     print(
-        f"\n[INFO] Selected device → "
+        f"\n[INFO] Selected device -> "
         f"{SELECTED_DEVICE.account_name} "
         f"({SELECTED_DEVICE.serial_number})\n"
     )
@@ -166,7 +172,7 @@ async def send_announcement(message: str):
     )
 
 # --------------------------
-# API endpoint (GET)
+# API Endpoint
 # --------------------------
 @app.get("/speak")
 async def announce(
@@ -176,8 +182,7 @@ async def announce(
     if not t.strip():
         raise HTTPException(status_code=400, detail="Message is empty")
 
-    spoken_text = t
-    await send_announcement(spoken_text)
+    await send_announcement(t)
 
     return {
         "status": "success",
@@ -186,7 +191,7 @@ async def announce(
     }
 
 # --------------------------
-# Run
+# Run Server
 # --------------------------
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=SERVER_PORT)
