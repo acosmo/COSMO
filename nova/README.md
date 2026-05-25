@@ -1,6 +1,5 @@
-# NOVA futuristic off-grid house ❤
+# NOVA your off-grid house ❤
 
-![IMG](img/day.jpg)
 ![IMG](img/nova.jpg)
 
 NOVA is a futuristic off-grid AI intelligence system that transforms a house into a living, adaptive environment — one that doesn’t just support life, but actively shapes it. Designed as the central cognitive core of COSMO’s autonomous living ecosystem, it functions as an artificial intelligence layer embedded into the home itself, coordinating energy, comfort, security, and experience through continuous learning and predictive decision-making.
