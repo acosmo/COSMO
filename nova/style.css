@@ -1,0 +1,265 @@
+   body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 630px;
+    }
+
+    #face {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* POLYGON AREA */
+    .zone {
+      position: absolute;
+      inset: 0;
+
+      clip-path: polygon(
+        100px 115px,
+        119px 183px,
+        550px 220px,
+        476px 156px
+      );
+
+      overflow: hidden;
+    }
+
+    /* FILL */
+    .solarFill {
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        180deg,
+        rgba(223,245,24,0.95),
+        rgba(236,234,233,0)
+      );
+
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+
+      transition: clip-path 0.4s ease;
+
+      /* pulse */
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+/* BATTERY FILL */
+.batteryFill {
+  position: absolute;
+
+  left: 200px;
+  top: 400px;
+
+  width: 7px;
+  height: 0px;
+
+  background: linear-gradient(
+    to top,
+    rgba(80,220,255,0.95),
+    rgba(80,220,255,0.9)
+  );
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 0 10px rgba(80,220,255,0.9),
+    0 0 20px rgba(80,220,255,0.6);
+
+  transform-origin: bottom center;
+
+  transition:
+    height 0.4s ease,
+    top 0.4s ease;
+}
+
+    /* PULSE EFFECT */
+    @keyframes pulse {
+      0% {
+        filter: brightness(1);
+      }
+
+      50% {
+        filter: brightness(1.8);
+      }
+
+      100% {
+        filter: brightness(1);
+      }
+    }
+
+    /* HUD */
+    .solarHud {
+      position: absolute;
+
+      /*
+        visual center of polygon
+      */
+      left: 311px;
+      top: 168px;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(5deg);
+
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+
+      color: rgb(230,217,44);
+
+      pointer-events: none;
+
+      text-shadow:
+        0 0 10px rgba(0,0,0,0.8),
+        0 0 20px rgba(223,245,24,0.5);
+
+      z-index: 20;
+    }
+
+    /* RUNNER */
+    .runner {
+      position: absolute;
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 40px;
+
+      background: rgb(223,245,24);
+
+      box-shadow:
+        0 0 10px rgba(223,245,24,0.9),
+        0 0 20px rgba(223,245,24,0.8),
+        0 0 30px rgba(223,245,24,0.6);
+
+      mix-blend-mode: screen;
+
+      z-index: 30;
+
+      animation:
+        runContour 6s linear infinite;
+    }
+
+    /* RUN AROUND POLYGON */
+    @keyframes runContour {
+
+      /* A */
+      0% {
+        left: 100px;
+        top: 115px;
+      }
+
+      /* D */
+      25% {
+        left: 476px;
+        top: 156px;
+      }
+
+      /* C */
+      50% {
+        left: 550px;
+        top: 220px;
+      }
+
+      /* B */
+      75% {
+        left: 119px;
+        top: 183px;
+      }
+
+      /* A */
+      100% {
+        left: 100px;
+        top: 115px;
+      }
+    }
+
+.gridRunner {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 20px;
+
+  background: red;
+
+  box-shadow:
+    0 0 10px rgba(255,0,0,0.9),
+    0 0 20px rgba(255,0,0,0.7),
+    0 0 30px rgba(255,0,0,0.5);
+
+  pointer-events: none;
+
+  z-index: 50;
+
+  mix-blend-mode: screen;
+
+  animation: gridRun 2.5s linear infinite;
+}
+
+@keyframes gridRun {
+  0% {
+    left: 140px;
+    top: 500px;
+    transform: rotate(35deg);
+  }
+
+  100% {
+    left: 452px;
+    top: 635px;
+    transform: rotate(35deg);
+  }
+} 
+
+.carHud,
+.batteryHud,
+.houseHud,
+.gridHud {
+  position: absolute;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+
+  color: rgb(80, 220, 255);
+
+  pointer-events: none;
+
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.8),
+    0 0 20px rgba(80,220,255,0.5);
+
+  z-index: 9999;
+}
+
+
+.carHud {
+  left: 370px;
+  top: 465px;
+}
+
+.batteryHud {
+  left: 170px;
+  top: 450px;
+}
+
+.houseHud {
+  left: 520px;
+  top: 325px;
+}
+
+.gridHud {
+  left: 420px;
+  top: 600px;
+}
