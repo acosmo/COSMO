@@ -2,7 +2,7 @@
 
 ![IMG](img/day.jpg)
 
-NOVA is a futuristic off-grid AI intelligence system that transforms a house into a living, adaptive environment—one that doesn’t just support life, but actively shapes it. Designed as the central cognitive core of COSMO’s autonomous living ecosystem, it functions as an artificial intelligence layer embedded into the home itself, coordinating energy, comfort, security, and experience through continuous learning and predictive decision-making.
+NOVA is a futuristic off-grid AI intelligence system that transforms a house into a living, adaptive environment — one that doesn’t just support life, but actively shapes it. Designed as the central cognitive core of COSMO’s autonomous living ecosystem, it functions as an artificial intelligence layer embedded into the home itself, coordinating energy, comfort, security, and experience through continuous learning and predictive decision-making.
 
 At its foundation, NOVA governs the home’s entire energy architecture. It continuously monitors solar generation, battery storage, and grid interaction, using AI-driven forecasting to predict demand and optimize distribution in real time. It decides whether energy should be stored, consumed, or exported, treating every watt as part of a dynamic, intelligent ecosystem rather than a static resource.
 
@@ -18,7 +18,7 @@ Mobility is seamlessly integrated through intelligent EV charging management, wh
 
 Lighting, climate, security, and energy are no longer isolated systems. Under NOVA, they become interconnected AI agents within a unified home intelligence network, continuously communicating and self-adjusting to maintain balance between efficiency, comfort, and safety.
 
-Ultimately, NOVA turns COSMO’s home into an intelligent, self-evolving environment—an off-grid living system powered by artificial intelligence. It learns from the past, predicts the future, and adapts in real time, creating a home that doesn’t just respond to life, but actively thinks ahead of it.
+Ultimately, NOVA turns COSMO’s home into an intelligent, self-evolving environment — an off-grid living system powered by artificial intelligence. It learns from the past, predicts the future, and adapts in real time, creating a home that doesn’t just respond to life, but actively thinks ahead of it.
 
 # Send '25' command and you will see magic
     open index.html
