@@ -4,6 +4,15 @@
 
 NOVA is a futuristic off-grid AI intelligence system that transforms a house into a living, adaptive environment — one that doesn’t just support life, but actively shapes it. Designed as the central cognitive core of COSMO’s autonomous living ecosystem, it functions as an artificial intelligence layer embedded into the home itself, coordinating energy, comfort, security, and experience through continuous learning and predictive decision-making.
 
+You can customize your home and make it truly your own digital world. Add your house, name it, and shape it to match your lifestyle. Replace or remove elements freely—swap a car for a bicycle charger, or even choose a cat instead of a dog. Every part of the environment is flexible and personal.
+
+You can also redesign the layout and visual style however you want, creating a space that reflects your identity. The system supports dynamic environments with day and night modes, as well as real-world weather effects like rain and snow.
+
+Many more options are available—you can also add your own custom elements, colors, house setups, or configurations to make it truly personal and unique:
+![IMG](img/0.jpg)
+![IMG](img/4.jpg)
+![IMG](img/3.jpg)
+
 At its foundation, NOVA governs the home’s entire energy architecture. It continuously monitors solar generation, battery storage, and grid interaction, using AI-driven forecasting to predict demand and optimize distribution in real time. It decides whether energy should be stored, consumed, or exported, treating every watt as part of a dynamic, intelligent ecosystem rather than a static resource.
 
 But NOVA goes far beyond energy management — it acts as a living home intelligence.
@@ -20,7 +29,7 @@ Lighting, climate, security, and energy are no longer isolated systems. Under NO
 
 Ultimately, NOVA turns COSMO’s home into an intelligent, self-evolving environment — an off-grid living system powered by artificial intelligence. It learns from the past, predicts the future, and adapts in real time, creating a home that doesn’t just respond to life, but actively thinks ahead of it.
 
-# Send '25' command and you will see magic
+# send an open API command and you will see magic
     open index.html
 
     curl -X POST https://rest.ably.io/channels/nova/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL", "data": { "solar_pct": "100", "solar":"7248", "car_pct": "80", "car":"2300", "battery_pct": "50", "battery": "6894", "house": "350", "grid": "100"}  }'
