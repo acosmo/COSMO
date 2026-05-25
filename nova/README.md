@@ -9,9 +9,9 @@ You can customize your home and make it truly your own digital world. Add your h
 You can also redesign the layout and visual style however you want, creating a space that reflects your identity. The system supports dynamic environments with day and night modes, as well as real-world weather effects like rain and snow.
 
 Many more options are available—you can also add your own custom elements, colors, house setups, or configurations to make it truly personal and unique:
-![IMG](img/others/0.jpg)
-![IMG](img/others/4.jpg)
-![IMG](img/others/3.jpg)
+![IMG](img/other/0.jpg)
+![IMG](img/other/4.jpg)
+![IMG](img/other/3.jpg)
 
 At its foundation, NOVA governs the home’s entire energy architecture. It continuously monitors solar generation, battery storage, and grid interaction, using AI-driven forecasting to predict demand and optimize distribution in real time. It decides whether energy should be stored, consumed, or exported, treating every watt as part of a dynamic, intelligent ecosystem rather than a static resource.
 
