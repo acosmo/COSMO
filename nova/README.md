@@ -28,21 +28,18 @@ Lighting, climate, security, and energy are no longer isolated systems. Under NO
 
 Ultimately, NOVA turns COSMO’s home into an intelligent, self-evolving environment — an off-grid living system powered by artificial intelligence. It learns from the past, predicts the future, and adapts in real time, creating a home that doesn’t just respond to life, but actively thinks ahead of it.
 
-# send an open API command and you will see magic
+# Send an open API command and you will see magic
     open index.html
 
     curl -X POST https://rest.ably.io/channels/nova/messages -u "CClXdw.Z3P7Fw:G1W_WXLZYUpqqnjvplbv_GDmUJ3TB4lk1bs54DblqpE" -H "Content-Type: application/json" --data '{ "name":"cURL", "data": { "solar_pct": "100", "solar":"7248", "car_pct": "80", "car":"2300", "battery_pct": "50", "battery": "6894", "house": "350", "grid": "100"}  }'
 
-# OpenEVSE only
+# Solar production exporter see [grid/](grid/README.md) folder
+    You will need to have local mqtt running with or without OpenEVSE (see below)
+
+# OpenEVSE only Define [shell/](shell/config.sh)
     1. mqtt
     mosquitto_sub -h localhost -t "#" -v -u emonpi -P emonpi -t "#" -v
+    3. ctontab -e 
+    * * * * * /home/pi/shell/upload.sh >> /home/pi/shell/upload.log 2>&1
 
-    2. /usr/local/bin/uvicorn car:app --host 0.0.0.0 --port 8000  # web API energy export receiver -> writes to mqtt
-    2.1. http://192.168.1.245:8000/e=800 Export 1500+
-
-    source torch-env/bin/activate
-    pip install paho-mqtt
-    cd /mnt/c/Users/asus/git/cosmo/nova && jupyter-notebook --no-browser --ip=0.0.0.0 --port=8888 2>&1 &
-    
-    3. streamer.py # stream mqtt to UI
-    
+# N.B: For other EV chargers, you will need to determine how to control the charger’s start/stop function. This may be done through interfaces such as Modbus, an API, a NodeMCU-controlled smart socket, or another compatible method.

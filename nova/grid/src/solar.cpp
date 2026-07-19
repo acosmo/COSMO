@@ -5,6 +5,7 @@
 
 #define SENSOR_PIN 10
 #define MAINS_VOLTAGE 250
+#define COEFF 2.85
 
 const int samples = 4000;
 
@@ -165,7 +166,7 @@ void loop()
 
   // Calculate watts
   int watts =
-      current * MAINS_VOLTAGE;
+      current * MAINS_VOLTAGE * COEFF;
 
   if (watts < 10)
   {

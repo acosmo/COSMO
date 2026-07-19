@@ -83,6 +83,18 @@ Prototype with phone:
     3. C++ Whisper model performs STT.
     4. Returns text to client in real-time.
 
+
+# Known issues
+1. Firefox can’t establish a connection to the server at wss. (Firefox upgrades conenction to ws->wss)
+    Fix
+        Option 1 (quick test): disable HTTPS-Only Mode in Firefox
+        Open Firefox settings:
+        about:preferences
+        Search:
+        HTTPS-Only
+        Disable:
+        Enable HTTPS-Only Mode in all windows
+
 ### Support the project by purchasing my book [COSMO](https://cosmo.yes.app). All proceeds will be donated to charity and individuals in need, like my dad. It is an audio book — a captivating and original puzzle book inspired by my dad. It's unlike any other book you've listened before, blending mystery and emotion with a unique structure that keeps you guessing until the fascinating and unexpected ending.
 
 ![Logo](https://cosmo.yes.app/poster_eng.jpg)
