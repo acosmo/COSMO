@@ -7,14 +7,15 @@
 ![IMG](brain.jpg)
 
 COSMO Brain API for free!
-You can use it absolutely free, with a limit of 40 responses per hour — plenty for asking questions.
+You can use it absolutely free, with a limit of 10 questions a day.
 Each question can be up to 100 characters, enough to make a clear and logical query.
 All answers are simplified for kids, easy to understand and fun!
 
 ## Usage and voice responses over Alexa speaker using native TTS
-#### Use COSMO brain API with speech capability; see folder [speak](../senses/speak/README.md); (rate limit 40/hour and 100 chars per question)
+#### Use COSMO brain API with speech capability; see folder [speak](../senses/speak/README.md); (rate limit 10/day and 100 chars per question)
     
-    curl http://46.224.122.101:8081/brain?q=atom
+## open [bob.tml](bob.html) in browser and see the magic
+## or use curl http://46.224.122.101:8081/brain?q=atom
 
    
 Q: "atom" 
@@ -71,3 +72,40 @@ A: Investing is like planting a garden. You put money in (like seeds) and hopefu
 
     mkdir /home/cosmo/notebook
     jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --no-browser
+
+# Local memory using mempalace
+    source torch-env/bin/activate
+    pip install mempalace
+
+    mkdir brain
+    cd brain 
+    mempalace init .
+    nano memories.md
+
+    mempalace search "Cosmo"
+
+    mempalace-mcp --palace /home/asus/brain
+
+    mempalace mine .
+
+# How COSMO (mempalace) memory works 
+    Memory Chain:
+    Question → MemPalace memory search → Context + Personality → COSMO Brain API → AI model → Answer
+    
+    User asks a question
+    → Python client receives the question.
+        Python queries local MemPalace
+    → MemPalace searches your stored files, notes, and memories using semantic search.
+    → It returns the most relevant memories.
+        Python builds the COSMO prompt
+    → Combines:
+        COSMO personality
+        Retrieved memories
+        User question
+    Python sends the prompt to COSMO Brain API
+        → http://46.224.122.101:8081/brain
+    Brain API sends it to the AI model
+        → GPT-OSS 120B model processes the question using the supplied memory and personality.
+    AI generates the answer
+        → Response returns to the Brain API.
+

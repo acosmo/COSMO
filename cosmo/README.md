@@ -34,6 +34,8 @@ If you don’t have a subscription, you can use the [7-day trial version](https:
 5. Bonus 2: Extend COSMO’s speaking and brain capabilities with ChatGPT and old Alexa speaker ['speak' folder](senses/speak)
 6. Bonus 3: Extend COSMO’s listening capabilities with your own real-time Speech-to-Text (STT) running on a GPU ['listen/stt' folder](senses/listen/stt)
 
+
+
 # Honorable mentions
  * Thanks to God that gives...
  * To my father and my son: without them, this project would not exist

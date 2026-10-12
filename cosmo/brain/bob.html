@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask Bob 🪄</title>
+
+<style>
+:root {
+    --zoom: 3;   /* how much bigger the answer letters are (changed by A+ / A- buttons) */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    height: 100dvh;
+    background: #101827;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* TOP BAR */
+.header {
+    padding: 15px 20px;
+    background: #101827;
+    flex-shrink: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 0 0 15px;
+}
+
+form {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 17px 20px;
+    font-size: 20px;
+    border: 2px solid #3b82f6;
+    border-radius: 15px;
+    outline: none;
+    background: white;
+    color: #111827;
+}
+
+input:focus { border-color: #60a5fa; }
+
+button {
+    padding: 15px 25px;
+    background: #3b82f6;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) { background: #2563eb; }
+button:disabled { opacity: 0.7; cursor: wait; }
+
+/* FULL-SCREEN ANSWER */
+#answerBox {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    background: #000;
+    overflow: hidden;           /* hides the part of the scaled iframe outside the box */
+}
+
+/*
+  The iframe content comes from another origin, so we cannot style inside it.
+  Instead we transform the whole iframe from outside:
+  - width/height = 100% / zoom, then scale(zoom) fills the box again with bigger letters
+  - invert + hue-rotate turns the default white page / black text into dark / light
+*/
+#answerFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% / var(--zoom));
+    height: calc(100% / var(--zoom));
+    transform: scale(var(--zoom));
+    transform-origin: 0 0;
+    border: none;
+    background: white;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* THINKING MESSAGE */
+#thinking {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101827;
+    text-align: center;
+    padding: 30px;
+    pointer-events: none;
+}
+
+#thinking.hidden { display: none; }
+
+.thinking-text {
+    font-size: clamp(35px, 7vw, 70px);
+    font-weight: bold;
+    color: #60a5fa;
+}
+
+.dots {
+    display: inline-block;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dots { animation: none; }
+}
+
+/* BOTTOM BAR: speed + zoom */
+.footer {
+    padding: 10px 12px;
+    background: #101827;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.speed {
+    display: inline-block;
+    background: #243247;
+    color: #7dd3fc;
+    border: 1px solid #334155;
+    border-radius: 50px;
+    padding: 9px 20px;
+    font-size: 14px;
+}
+
+.zoom-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 50px;
+    background: #243247;
+    color: #7dd3fc;
+    border: 1px solid #334155;
+}
+
+.zoom-btn:hover:not(:disabled) { background: #334155; }
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .header { padding: 12px; }
+    h1 { font-size: 27px; }
+    form { flex-direction: column; }
+    input, button#askButton { width: 100%; }
+    #thinking { padding: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- QUESTION BOX -->
+<div class="header">
+    <h1>✨ Ask Bob 🪄</h1>
+
+    <form
+        id="questionForm"
+        action="http://46.224.122.101:8081/brain"
+        method="GET"
+        target="answerFrame">
+
+        <input
+            id="question"
+            type="text"
+            name="q"
+            placeholder="❓ Ask me anything..."
+            autocomplete="off"
+            required>
+
+        <button id="askButton" type="submit">🚀 ASK BOB</button>
+    </form>
+</div>
+
+<!-- ANSWER AREA -->
+<div id="answerBox">
+
+    <!-- The start page is drawn white-on-black-text on purpose:
+         the invert filter turns it into light text on a dark background. -->
+    <iframe
+        id="answerFrame"
+        name="answerFrame"
+        title="Brain AI answer"
+        srcdoc="<!DOCTYPE html><html><body style='margin:0;background:#fff;color:#000;font-family:Arial;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center'><div style='font-size:40px;font-weight:bold;padding:20px'>💡 Ask me anything!</div></body></html>">
+    </iframe>
+
+    <div id="thinking" class="hidden">
+        <div class="thinking-text">
+            🧠 Thinking<span class="dots">...</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- SPEED + ZOOM -->
+<div class="footer">
+    <button type="button" class="zoom-btn" id="zoomOut" aria-label="Smaller letters">A−</button>
+    <span class="speed" id="speed">⚡ Ready</span>
+    <button type="button" class="zoom-btn" id="zoomIn" aria-label="Bigger letters">A+</button>
+</div>
+
+<script>
+const form = document.getElementById("questionForm");
+const question = document.getElementById("question");
+const button = document.getElementById("askButton");
+const frame = document.getElementById("answerFrame");
+const thinking = document.getElementById("thinking");
+const speed = document.getElementById("speed");
+
+let startTime = 0;
+let timer = null;
+let waiting = false;
+let loadTimeout = null;
+
+/* ---------- Zoom (bigger / smaller letters) ---------- */
+let zoom = 3;
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 8;
+
+function setZoom(z) {
+    zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z));
+    document.documentElement.style.setProperty("--zoom", zoom);
+}
+
+document.getElementById("zoomIn").addEventListener("click", () => setZoom(zoom + 0.5));
+document.getElementById("zoomOut").addEventListener("click", () => setZoom(zoom - 0.5));
+
+/* ---------- Ask ---------- */
+function resetUI() {
+    waiting = false;
+    clearInterval(timer);
+    clearTimeout(loadTimeout);
+    thinking.classList.add("hidden");
+    button.disabled = false;
+    button.textContent = "🚀 ASK BRAIN";
+}
+
+form.addEventListener("submit", function (event) {
+    if (!question.value.trim()) {
+        event.preventDefault();
+        return;
+    }
+
+    startTime = performance.now();
+    waiting = true;
+
+    thinking.classList.remove("hidden");
+    speed.textContent = "⚡ Thinking...";
+    button.disabled = true;
+    button.textContent = "⏳ THINKING...";
+
+    clearInterval(timer);
+    timer = setInterval(function () {
+        if (waiting) {
+            const seconds = (performance.now() - startTime) / 1000;
+            speed.textContent = "⚡ " + seconds.toFixed(2) + "s";
+        }
+    }, 100);
+
+    /* If nothing loads, make the form usable again */
+    clearTimeout(loadTimeout);
+    loadTimeout = setTimeout(function () {
+        if (waiting) {
+            resetUI();
+            speed.textContent = "⚠️ Check connection";
+        }
+    }, 30000);
+});
+
+/* The iframe load event fires when the server response has loaded. */
+frame.addEventListener("load", function () {
+    if (!waiting) return;
+
+    const elapsed = (performance.now() - startTime) / 1000;
+    resetUI();
+    speed.textContent = "⚡ " + elapsed.toFixed(2) + "s";
+});
+</script>
+
+</body>
+</html>
