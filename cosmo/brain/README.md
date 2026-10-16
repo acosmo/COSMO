@@ -1,23 +1,60 @@
 # COSMO 2 ❤
 ## Brain of Albert Einstein
 
-### Recently, while discussing the number of neurons in a dog’s brain versus a human brain with my son, he asked if COSMO could get Albert Einstein’s brain. We ended up fitting “brain” in 120 GB flash drive and it become about 10× smarter than Albert Einstein
+### Recently, while discussing the number of neurons in a dog’s brain versus a human brain with my son, he asked if COSMO could get Albert Einstein’s brain. We ended up fitting “brain” in 800GB flash drive and it become about 10× smarter than Albert Einstein (recently I have upgraded brain to use 800Billion param model)
 ### Now you can have it too — enable Albert Einstein's brain in your COSMO for free
 
 ![IMG](brain.jpg)
 
 COSMO Brain API for free!
-You can use it absolutely free, with a limit of 10 questions a day.
+You can use it absolutely free, with a limit of 10 questions a day. If you need more ping me on Discord
 Each question can be up to 100 characters, enough to make a clear and logical query.
 All answers are simplified for kids, easy to understand and fun!
 
 ## Usage and voice responses over Alexa speaker using native TTS
 #### Use COSMO brain API with speech capability; see folder [speak](../senses/speak/README.md); (rate limit 10/day and 100 chars per question)
     
-## open [bob.tml](bob.html) in browser and see the magic
+## open [bob.html](bob.html) in browser and see the magic
 ## or use curl http://46.224.122.101:8081/brain?q=atom
 
-   
+Unlimited Memories
+Check [brain.ipynb](brain.ipynb) and [Milla Jovovich](https://www.mempalace.tech/) code
+
+![IMG](mempalace.png) 
+![IMG](memory.png)
+
+# How COSMO (mempalace) memory works 
+    Memory Chain:
+    Question → MemPalace memory search → Context + Personality → COSMO Brain API → AI model → Answer
+    
+    User asks a question
+    → Python client receives the question.
+        Python queries local MemPalace
+    → MemPalace searches your stored files, notes, and memories using semantic search.
+    → It returns the most relevant memories.
+        Python builds the COSMO prompt
+    → Combines:
+        COSMO personality
+        Retrieved memories
+        User question
+    Python sends the prompt to COSMO Brain API
+        → http://46.224.122.101:8081/brain
+    Brain API sends it to the AI model
+        → 800B model processes the question using the supplied memory and personality.
+    AI generates the answer
+        → Response returns via Brain API.
+
+Memory questions and brain retrieval. (Note: )
+---
+Q: "how smart is Cosmo?"
+A: "Cosmo is super smart, like a tiny brain that fits on a flash drive and is about ten times smarter than Albert Einstein. But the best part is Cosmo learns and grows with you every day, so adventures together make Cosmo even wiser and more fun."
+
+Q: "Who have build Cosmo?"
+A: "Your dad built Cosmo, with a little help from Granddad Mykola, because Cosmo started as a special robot just for him. So Cosmo is like a super smart friend that your family made together"
+
+
+Simple questions: 
+---
 Q: "atom" 
 A: An atom is like the tiniest LEGO brick that builds all the stuff you see, with a small center of protons and neutrons and buzzing electrons spinning around it. Try drawing different colored “atom blocks” on paper and then stack or swirl them together to create rainbow “mixes” — just like mixing paints or building a mini‑solar‑system game!
 
@@ -87,25 +124,3 @@ A: Investing is like planting a garden. You put money in (like seeds) and hopefu
     mempalace-mcp --palace /home/asus/brain
 
     mempalace mine .
-
-# How COSMO (mempalace) memory works 
-    Memory Chain:
-    Question → MemPalace memory search → Context + Personality → COSMO Brain API → AI model → Answer
-    
-    User asks a question
-    → Python client receives the question.
-        Python queries local MemPalace
-    → MemPalace searches your stored files, notes, and memories using semantic search.
-    → It returns the most relevant memories.
-        Python builds the COSMO prompt
-    → Combines:
-        COSMO personality
-        Retrieved memories
-        User question
-    Python sends the prompt to COSMO Brain API
-        → http://46.224.122.101:8081/brain
-    Brain API sends it to the AI model
-        → GPT-OSS 120B model processes the question using the supplied memory and personality.
-    AI generates the answer
-        → Response returns to the Brain API.
-
